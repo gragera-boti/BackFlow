@@ -5,156 +5,140 @@ struct QuickLogSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     
-    @State private var painNow: Int? = nil
-    @State private var painAfterActivity: Int? = nil
-    @State private var notes = ""
-    @State private var showRedFlagWarning = false
-    
-    // Red flags
-    @State private var bowelBladderChange = false
-    @State private var saddleNumbness = false
-    @State private var progressiveWeakness = false
-    @State private var fever = false
-    @State private var majorTrauma = false
-    @State private var unexplainedWeightLoss = false
-    @State private var severeNightPain = false
-    
-    var hasRedFlags: Bool {
-        bowelBladderChange || saddleNumbness || progressiveWeakness ||
-        fever || majorTrauma || unexplainedWeightLoss || severeNightPain
-    }
+    @State private var viewModel: QuickLogViewModel?
     
     var body: some View {
         NavigationStack {
-            Form {
-                Section("Pain Level") {
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Pain right now")
-                            .font(.subheadline)
-                        
-                        if let pain = painNow {
-                            Slider(value: .init(
-                                get: { Double(pain) },
-                                set: { painNow = Int($0) }
-                            ), in: 0...10, step: 1)
-                            
-                            HStack {
-                                Text("No pain")
-                                    .font(.caption)
-                                Spacer()
-                                Text("\(pain)/10")
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                Spacer()
-                                Text("Worst pain")
-                                    .font(.caption)
-                            }
-                            .foregroundStyle(.secondary)
-                        } else {
-                            Button("Add pain rating") {
-                                painNow = 5
-                            }
+            Group {
+                if let vm = viewModel {
+                    contentView(vm: vm)
+                } else {
+                    ProgressView()
+                        .onAppear {
+                            viewModel = QuickLogViewModel(modelContext: modelContext)
                         }
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 12) {
-                        Text("Pain after activity (optional)")
-                            .font(.subheadline)
-                        
-                        if let pain = painAfterActivity {
-                            Slider(value: .init(
-                                get: { Double(pain) },
-                                set: { painAfterActivity = Int($0) }
-                            ), in: 0...10, step: 1)
-                            
-                            HStack {
-                                Text("No pain")
-                                    .font(.caption)
-                                Spacer()
-                                Text("\(pain)/10")
-                                    .font(.caption)
-                                    .fontWeight(.bold)
-                                Spacer()
-                                Text("Worst pain")
-                                    .font(.caption)
-                            }
-                            .foregroundStyle(.secondary)
-                        } else {
-                            Button("Add pain after activity") {
-                                painAfterActivity = 5
-                            }
-                        }
-                    }
-                }
-                
-                Section("Red Flag Symptoms") {
-                    Toggle("Bowel/bladder changes", isOn: $bowelBladderChange)
-                    Toggle("Saddle numbness", isOn: $saddleNumbness)
-                    Toggle("Progressive weakness", isOn: $progressiveWeakness)
-                    Toggle("Fever with pain", isOn: $fever)
-                    Toggle("Major trauma", isOn: $majorTrauma)
-                    Toggle("Unexplained weight loss", isOn: $unexplainedWeightLoss)
-                    Toggle("Severe night pain", isOn: $severeNightPain)
-                    
-                    if hasRedFlags {
-                        Text("⚠️ Red flags detected. Please consult a healthcare provider.")
-                            .font(.caption)
-                            .foregroundStyle(.orange)
-                    }
-                }
-                
-                Section("Notes") {
-                    TextField("Additional notes (optional)", text: $notes, axis: .vertical)
-                        .lineLimit(3...6)
                 }
             }
             .navigationTitle("Quick Log")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-                
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
-                        saveLog()
-                    }
-                }
-            }
-            .alert("Red Flags Detected", isPresented: $showRedFlagWarning) {
-                Button("I Understand", role: .cancel) {
-                    dismiss()
-                }
-            } message: {
-                Text("You've indicated symptoms that may require medical attention. Please consult a healthcare provider.")
+                toolbarItems
             }
         }
     }
     
-    private func saveLog() {
-        let symptomLog = SymptomLog(
-            timestamp: Date(),
-            painNow: painNow,
-            painAfterActivity: painAfterActivity,
-            bowelBladderChange: bowelBladderChange,
-            saddleNumbness: saddleNumbness,
-            progressiveWeakness: progressiveWeakness,
-            fever: fever,
-            majorTrauma: majorTrauma,
-            unexplainedWeightLoss: unexplainedWeightLoss,
-            severeNightPain: severeNightPain,
-            notes: notes.isEmpty ? nil : notes
-        )
+    @ViewBuilder
+    private func contentView(vm: QuickLogViewModel) -> some View {
+        @Bindable var bindableVM = vm
         
-        modelContext.insert(symptomLog)
-        try? modelContext.save()
+        Form {
+            painSection(vm: bindableVM)
+            redFlagsSection(vm: bindableVM)
+            notesSection(vm: bindableVM)
+        }
+        .alert("Red Flags Detected", isPresented: $bindableVM.showRedFlagWarning) {
+            Button("I Understand", role: .cancel) {
+                vm.dismissWarning()
+                dismiss()
+            }
+        } message: {
+            Text("You've indicated symptoms that may require medical attention. Please consult a healthcare provider.")
+        }
+    }
+    
+    // MARK: - View Sections
+    
+    @ViewBuilder
+    private func painSection(vm: QuickLogViewModel) -> some View {
+        @Bindable var bindableVM = vm
         
-        if hasRedFlags {
-            showRedFlagWarning = true
-        } else {
-            dismiss()
+        Section("Pain Level") {
+            painSlider(title: "Pain right now", value: $bindableVM.painNow)
+            painSlider(title: "Pain after activity (optional)", value: $bindableVM.painAfterActivity)
+        }
+    }
+    
+    @ViewBuilder
+    private func painSlider(title: String, value: Binding<Int?>) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.subheadline)
+            
+            if let painValue = value.wrappedValue {
+                Slider(value: .init(
+                    get: { Double(painValue) },
+                    set: { value.wrappedValue = Int($0) }
+                ), in: 0...10, step: 1)
+                
+                HStack {
+                    Text("No pain")
+                        .font(.caption)
+                    Spacer()
+                    Text("\(painValue)/10")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Text("Worst pain")
+                        .font(.caption)
+                }
+                .foregroundStyle(.secondary)
+            } else {
+                Button("Add \(title.lowercased())") {
+                    value.wrappedValue = 5
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func redFlagsSection(vm: QuickLogViewModel) -> some View {
+        @Bindable var bindableVM = vm
+        
+        Section("Red Flag Symptoms") {
+            Toggle("Bowel/bladder changes", isOn: $bindableVM.bowelBladderChange)
+            Toggle("Saddle numbness", isOn: $bindableVM.saddleNumbness)
+            Toggle("Progressive weakness", isOn: $bindableVM.progressiveWeakness)
+            Toggle("Fever with pain", isOn: $bindableVM.fever)
+            Toggle("Major trauma", isOn: $bindableVM.majorTrauma)
+            Toggle("Unexplained weight loss", isOn: $bindableVM.unexplainedWeightLoss)
+            Toggle("Severe night pain", isOn: $bindableVM.severeNightPain)
+            
+            if vm.hasRedFlags {
+                Text("⚠️ Red flags detected. Please consult a healthcare provider.")
+                    .font(.caption)
+                    .foregroundStyle(.orange)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func notesSection(vm: QuickLogViewModel) -> some View {
+        @Bindable var bindableVM = vm
+        
+        Section("Notes") {
+            TextField("Additional notes (optional)", text: $bindableVM.notes, axis: .vertical)
+                .lineLimit(3...6)
+        }
+    }
+    
+    @ToolbarContentBuilder
+    private var toolbarItems: some ToolbarContent {
+        ToolbarItem(placement: .cancellationAction) {
+            Button("Cancel") { dismiss() }
+        }
+        
+        ToolbarItem(placement: .confirmationAction) {
+            if let vm = viewModel {
+                Button("Save") {
+                    Task {
+                        let result = await vm.saveLog()
+                        if result == .success {
+                            dismiss()
+                        }
+                    }
+                }
+                .disabled(vm.isSaving || !vm.canSave)
+            }
         }
     }
 }

@@ -112,6 +112,8 @@
 		831AB6E488304C59A11FB4EA /* SessionExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D4AE8CDC3347FC8DEA2806 /* SessionExerciseInfo.swift */; };
 		F742202DFDE6461294222D31 /* SessionProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75E247BC2704A5288BDCE53 /* SessionProgressBar.swift */; };
 		C19CFA5B5A9442A483264EB8 /* PostSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04772F3BE4284CD5B38A05EB /* PostSessionView.swift */; };
+				1E0414C3297E4419B58F327B /* QuickLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F556796FABD4AB092351DD4 /* QuickLogViewModel.swift */; };
+		32A13C1C0C4C4C7192727706 /* WalkingLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F224D2AE61431C9F4C2DC4 /* WalkingLogViewModel.swift */; };
 		/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,6 +222,8 @@
 		05D4AE8CDC3347FC8DEA2806 /* SessionExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExerciseInfo.swift; sourceTree = "<group>"; };
 		B75E247BC2704A5288BDCE53 /* SessionProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProgressBar.swift; sourceTree = "<group>"; };
 		04772F3BE4284CD5B38A05EB /* PostSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionView.swift; sourceTree = "<group>"; };
+				0F556796FABD4AB092351DD4 /* QuickLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLogViewModel.swift; sourceTree = "<group>"; };
+		A3F224D2AE61431C9F4C2DC4 /* WalkingLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLogViewModel.swift; sourceTree = "<group>"; };
 		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +490,9 @@
 			children = (
 				18AC3301C1667326D1133AF5 /* QuickLogSheet.swift */,
 				AF2AB8A02D17B94F00FDB3DB /* WalkingLogSheet.swift */,
+			
+				0F556796FABD4AB092351DD4 /* QuickLogViewModel.swift */,
+				A3F224D2AE61431C9F4C2DC4 /* WalkingLogViewModel.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -787,6 +794,9 @@
 				831AB6E488304C59A11FB4EA /* SessionExerciseInfo.swift in Sources */,
 				F742202DFDE6461294222D31 /* SessionProgressBar.swift in Sources */,
 				C19CFA5B5A9442A483264EB8 /* PostSessionView.swift in Sources */,
+			
+				1E0414C3297E4419B58F327B /* QuickLogViewModel.swift in Sources */,
+				32A13C1C0C4C4C7192727706 /* WalkingLogViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
