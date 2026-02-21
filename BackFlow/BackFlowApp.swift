@@ -3,40 +3,38 @@ import SwiftData
 
 @main
 struct BackFlowApp: App {
-    @AppStorage("onboardingCompleted") private var onboardingCompleted = false
-    @AppStorage("cloudSyncEnabled") private var cloudSyncEnabled = false
+    // MARK: - State
+    @State private var router = AppRouter()
     
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            UserProfile.self,
-            Reference.self,
-            Exercise.self,
-            EducationCard.self,
-            ProgramTemplate.self,
-            ProgramPlan.self,
-            Session.self,
-            SetLog.self,
-            SymptomLog.self,
-            FunctionLog.self,
-            WalkingLog.self
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        
+    // MARK: - Model Container
+    let modelContainer: ModelContainer
+    
+    init() {
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            modelContainer = try ModelContainer(
+                for: UserProfile.self,
+                Exercise.self,
+                EducationCard.self,
+                ProgramTemplate.self,
+                ProgramPlan.self,
+                Session.self,
+                SetLog.self,
+                SymptomLog.self,
+                FunctionLog.self,
+                WalkingLog.self,
+                Reference.self
+            )
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            fatalError("Failed to create ModelContainer: \(error)")
         }
-    }()
+    }
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(sharedModelContainer)
-                .onAppear {
-                    // Schedule daily reminder if enabled
-                    NotificationService.shared.requestAuthorization()
-                }
+                .modelContainer(modelContainer)
+                .environment(router)
+                .serviceContainer(ServiceContainer(modelContext: modelContainer.mainContext))
         }
     }
 }

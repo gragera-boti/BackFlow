@@ -1,66 +1,81 @@
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @AppStorage("onboardingCompleted") private var onboardingCompleted = false
-    @State private var seedingComplete = false
+    @Environment(\.router) private var router
     
     var body: some View {
-        Group {
-            if !seedingComplete {
-                ProgressView("Loading...")
-                    .task {
-                        await SeedImportService.shared.importSeedDataIfNeeded(modelContext: modelContext)
-                        seedingComplete = true
+        NavigationStack(path: $router.path) {
+            TabView {
+                TodayView()
+                    .tabItem {
+                        Label("Today", systemImage: "calendar")
                     }
-            } else if !onboardingCompleted {
-                OnboardingFlow()
-            } else {
-                MainTabView()
+                
+                // TODO: Add other tab views (Plan, Progress, Library)
+                Text("Plan")
+                    .tabItem {
+                        Label("Plan", systemImage: "list.bullet.clipboard")
+                    }
+                
+                Text("Progress")
+                    .tabItem {
+                        Label("Progress", systemImage: "chart.xyaxis.line")
+                    }
+                
+                Text("Library")
+                    .tabItem {
+                        Label("Library", systemImage: "books.vertical")
+                    }
+            }
+            .navigationDestination(for: AppDestination.self) { destination in
+                destinationView(for: destination)
             }
         }
     }
-}
-
-struct MainTabView: View {
-    @State private var selectedTab = 0
     
-    var body: some View {
-        TabView(selection: $selectedTab) {
-            TodayView()
-                .tabItem {
-                    Label("Today", systemImage: "calendar")
-                }
-                .tag(0)
+    @ViewBuilder
+    private func destinationView(for destination: AppDestination) -> some View {
+        switch destination {
+        case .exerciseDetail(let slug):
+            Text("Exercise Detail: \(slug)")
+            // TODO: ExerciseDetailView(exerciseSlug: slug)
             
-            PlanView()
-                .tabItem {
-                    Label("Plan", systemImage: "list.bullet.clipboard")
-                }
-                .tag(1)
+        case .educationDetail(let cardId):
+            Text("Education Detail: \(cardId)")
+            // TODO: EducationDetailView(cardId: cardId)
             
-            ProgressTrackingView()
-                .tabItem {
-                    Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
-                }
-                .tag(2)
+        case .sessionPlayer(let sessionId):
+            Text("Session Player: \(sessionId)")
+            // TODO: SessionPlayerView(sessionId: sessionId)
             
-            LibraryView()
-                .tabItem {
-                    Label("Library", systemImage: "books.vertical")
-                }
-                .tag(3)
+        case .settings:
+            Text("Settings")
+            // TODO: SettingsView()
+            
+        case .quickLog:
+            Text("Quick Log")
+            // TODO: QuickLogSheet()
+            
+        case .walkingLog:
+            Text("Walking Log")
+            // TODO: WalkingLogSheet()
+            
+        case .baselineAssessment:
+            Text("Baseline Assessment")
+            // TODO: BaselineAssessmentView()
+            
+        case .redFlags:
+            Text("Red Flags")
+            // TODO: RedFlagsView()
+            
+        case .goalAndSchedule:
+            Text("Goal and Schedule")
+            // TODO: GoalAndScheduleView()
         }
     }
 }
 
 #Preview {
-    let config = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try! ModelContainer(
-        for: UserProfile.self, Exercise.self, Session.self,
-        configurations: config
-    )
-    return ContentView()
-        .modelContainer(container)
+    ContentView()
+        .environment(AppRouter())
 }
