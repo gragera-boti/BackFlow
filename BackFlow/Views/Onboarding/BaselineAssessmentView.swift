@@ -109,7 +109,7 @@ struct BaselineAssessmentView: View {
                 }
                 
                 Button(action: completeAssessment) {
-                    Text("Create My Plan")
+                    Text("Start My Program")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -124,10 +124,20 @@ struct BaselineAssessmentView: View {
     }
     
     private func completeAssessment() {
-        guard let profile = profiles.first,
-              let template = templates.first(where: { $0.programId == "lbp-primary-10wk" }) else {
+        print("completeAssessment called")
+        print("Profiles count: \(profiles.count)")
+        print("Templates count: \(templates.count)")
+        
+        guard let profile = profiles.first else {
+            print("ERROR: No UserProfile found")
+            // Still complete onboarding even if profile is missing
+            onComplete()
             return
         }
+        
+        // Get template or use default programId
+        let templateId = templates.first(where: { $0.programId == "lbp-primary-10wk" })?.programId ?? "lbp-primary-10wk"
+        print("Using template ID: \(templateId)")
         
         // Create baseline symptom log
         let symptomLog = SymptomLog(
@@ -161,15 +171,21 @@ struct BaselineAssessmentView: View {
         
         // Create program plan
         let plan = PlanEngine.shared.createPlan(
-            from: template.programId,
+            from: templateId,
             baselinePain: worstPainLast7Days,
             sessionDaysPerWeek: profile.sessionsPerWeek,
             modelContext: modelContext
         )
         modelContext.insert(plan)
         
-        try? modelContext.save()
+        do {
+            try modelContext.save()
+            print("Successfully saved baseline assessment and plan")
+        } catch {
+            print("Error saving: \(error)")
+        }
         
+        print("Calling onComplete()")
         onComplete()
     }
 }
