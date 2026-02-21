@@ -14,7 +14,6 @@
 		2D1B0314FA86C05DA7333443 /* ExerciseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966776DCA0A29EEFE3246484 /* ExerciseDetailView.swift */; };
 		464DABA42CAB3BEBEC3E5362 /* BackFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB86470A8540715208C0A2C /* BackFlowApp.swift */; };
 		4D00D31C399B0DB879364A8C /* EducationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E530BAF6C7E0E69BE3D5950 /* EducationDetailView.swift */; };
-		509EBF9A73B266516AE6ECEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B8C09AFBA9660916E79C5C /* Assets.xcassets */; };
 		6AF07494D264EE89D387276F /* PlanEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A409D3ECD220FA6AAC8223 /* PlanEngine.swift */; };
 		71A76456D1ADEB413A21C62B /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C04943D0203131CC69683A8 /* TodayView.swift */; };
 		928233AFE7A53F41D4E6A7DF /* QuickLogSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AC3301C1667326D1133AF5 /* QuickLogSheet.swift */; };
@@ -37,7 +36,6 @@
 		18AC3301C1667326D1133AF5 /* QuickLogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLogSheet.swift; sourceTree = "<group>"; };
 		1EB86470A8540715208C0A2C /* BackFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackFlowApp.swift; sourceTree = "<group>"; };
 		222A14BD3CDA9A707B447411 /* SeedImportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedImportService.swift; sourceTree = "<group>"; };
-		29B8C09AFBA9660916E79C5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DE89DE5B3E87E023B0FB5EC /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		34F2EDAA70639B99A350CB4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C04943D0203131CC69683A8 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 		0B5B4A208AB66075667E4536 /* BackFlow */ = {
 			isa = PBXGroup;
 			children = (
-				29B8C09AFBA9660916E79C5C /* Assets.xcassets */,
 				1EB86470A8540715208C0A2C /* BackFlowApp.swift */,
 				34F2EDAA70639B99A350CB4F /* ContentView.swift */,
 				C8C6E38E210DFF384A5D3DAE /* Models.swift */,
@@ -175,7 +172,6 @@
 			buildConfigurationList = B530CE715A777F278ECF2673 /* Build configuration list for PBXNativeTarget "BackFlow" */;
 			buildPhases = (
 				BBC62EC6D5902F4AE3015A78 /* Sources */,
-				DA42326127B0E5945B4535AE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -221,17 +217,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		DA42326127B0E5945B4535AE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				509EBF9A73B266516AE6ECEE /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BBC62EC6D5902F4AE3015A78 /* Sources */ = {

@@ -21,10 +21,15 @@ targets:
     deploymentTarget: "17.0"
     
     sources:
-      - BackFlow
+      - path: BackFlow
+        excludes:
+          - "*.xcassets"
     
     resources:
-      - SeedData
+      - path: SeedData
+        type: folder
+      - path: BackFlow/Assets.xcassets
+        type: folder
     
     info:
       path: Info.plist

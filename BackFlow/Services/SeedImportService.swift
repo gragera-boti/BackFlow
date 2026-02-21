@@ -114,29 +114,27 @@ class SeedImportService {
     private func importProgramTemplates(modelContext: ModelContext) async {
         guard let url = Bundle.main.url(forResource: "program_templates", withExtension: "json", subdirectory: "SeedData"),
               let data = try? Data(contentsOf: url),
-              let jsonString = String(data: data, encoding: .utf8),
-              let json = try? JSONDecoder().decode([ProgramTemplateJSON].self, from: data) else {
+              let template = try? JSONDecoder().decode(ProgramTemplateJSON.self, from: data) else {
             print("Failed to load program_templates.json")
             return
         }
         
-        for template in json {
-            // Convert template back to JSON string for storage
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            guard let templateData = try? encoder.encode(template),
-                  let templateJSON = String(data: templateData, encoding: .utf8) else {
-                continue
-            }
-            
-            let programTemplate = ProgramTemplate(
-                programId: template.programId,
-                name: template.name,
-                targetCondition: template.targetCondition,
-                jsonPayload: templateJSON
-            )
-            modelContext.insert(programTemplate)
+        // Convert template back to JSON string for storage
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        guard let templateData = try? encoder.encode(template),
+              let templateJSON = String(data: templateData, encoding: .utf8) else {
+            print("Failed to encode template")
+            return
         }
+        
+        let programTemplate = ProgramTemplate(
+            programId: template.programId,
+            name: template.name,
+            targetCondition: template.targetCondition,
+            jsonPayload: templateJSON
+        )
+        modelContext.insert(programTemplate)
     }
 }
 
@@ -174,6 +172,23 @@ struct ExerciseJSON: Codable {
     let rangeOfMotionNotes: String
     let evidenceRefs: [String]
     let illustrationAssetName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case slug, name, category, equipment, difficulty
+        case regions = "region"
+        case timePerSetSec = "time_per_set_sec"
+        case setsDefault = "sets_default"
+        case repsDefault = "reps_default"
+        case holdSecDefault = "hold_sec_default"
+        case restSecDefault = "rest_sec_default"
+        case primaryCues = "primary_cues"
+        case commonMistakes = "common_mistakes"
+        case progressions, regressions
+        case dosageNotes = "dosage_notes"
+        case rangeOfMotionNotes = "range_of_motion_notes"
+        case evidenceRefs = "evidence_refs"
+        case illustrationAssetName = "illustration"
+    }
 }
 
 struct EducationCardJSON: Codable {
@@ -182,6 +197,11 @@ struct EducationCardJSON: Codable {
     let summary: String
     let detailMarkdown: String
     let refs: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, summary, refs
+        case detailMarkdown = "detail_md"
+    }
 }
 
 struct ProgramTemplateJSON: Codable {
@@ -189,20 +209,44 @@ struct ProgramTemplateJSON: Codable {
     let name: String
     let targetCondition: String
     let phases: [PhaseJSON]
-    let activityLadder: [ActivityLadderLevelJSON]
+    let activityLadder: [ActivityLadderLevelJSON]?
+    
+    enum CodingKeys: String, CodingKey {
+        case name, phases
+        case programId = "program_id"
+        case targetCondition = "target_condition"
+        case activityLadder = "activity_ladder"
+    }
 }
 
 struct PhaseJSON: Codable {
     let phaseId: String
     let name: String
-    let durationWeeks: Int
+    let durationWeeks: Int?
     let sessionTemplates: [SessionTemplateJSON]
+    let goals: [String]?
+    let exitCriteria: [String]?
+    let sessionsPerWeek: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case name, goals
+        case phaseId = "phase_id"
+        case durationWeeks = "duration_weeks"
+        case sessionTemplates = "session_templates"
+        case exitCriteria = "exit_criteria"
+        case sessionsPerWeek = "sessions_per_week"
+    }
 }
 
 struct SessionTemplateJSON: Codable {
     let templateId: String
     let name: String
     let exercises: [SessionExerciseJSON]
+    
+    enum CodingKeys: String, CodingKey {
+        case name, exercises
+        case templateId = "template_id"
+    }
 }
 
 struct SessionExerciseJSON: Codable {
@@ -210,7 +254,16 @@ struct SessionExerciseJSON: Codable {
     let sets: Int
     let reps: Int?
     let holdSec: Int?
+    let durationSec: Int?
     let restSec: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case sets, reps
+        case exerciseSlug = "slug"
+        case holdSec = "hold_sec"
+        case durationSec = "duration_sec"
+        case restSec = "rest_sec"
+    }
 }
 
 struct ActivityLadderLevelJSON: Codable {
@@ -218,4 +271,9 @@ struct ActivityLadderLevelJSON: Codable {
     let name: String
     let description: String
     let weeklyMinutes: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case level, name, description
+        case weeklyMinutes = "weekly_minutes"
+    }
 }
