@@ -10,7 +10,16 @@ struct BackFlowApp: App {
     let modelContainer: ModelContainer
     
     init() {
+        // Check for test mode
+        let isTestMode = ProcessInfo.processInfo.arguments.contains("-UITestMode")
+        let shouldResetOnboarding = ProcessInfo.processInfo.arguments.contains("-ResetOnboarding")
+        
+        if shouldResetOnboarding {
+            UserDefaults.standard.removeObject(forKey: "onboardingCompleted")
+        }
+        
         do {
+            let configuration = ModelConfiguration(isStoredInMemoryOnly: isTestMode)
             modelContainer = try ModelContainer(
                 for: UserProfile.self,
                 Exercise.self,
@@ -22,8 +31,22 @@ struct BackFlowApp: App {
                 SymptomLog.self,
                 FunctionLog.self,
                 WalkingLog.self,
-                Reference.self
+                Reference.self,
+                configurations: configuration
             )
+            
+            // Import seed data on first launch (skip in test mode)
+            if !isTestMode {
+                let context = modelContainer.mainContext
+                let seedImportService = SeedImportService(modelContext: context)
+                
+                Task {
+                    if seedImportService.needsImport() {
+                        try await seedImportService.importAllData()
+                        print("✅ Seed data imported successfully")
+                    }
+                }
+            }
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }

@@ -135,6 +135,7 @@ struct QuickLogSheet: View {
     
     private func saveLog() {
         let symptomLog = SymptomLog(
+            timestamp: Date(),
             painNow: painNow,
             painAfterActivity: painAfterActivity,
             bowelBladderChange: bowelBladderChange,

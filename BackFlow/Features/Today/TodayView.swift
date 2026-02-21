@@ -5,6 +5,8 @@ struct TodayView: View {
     @Environment(\.router) private var router
     
     @State private var viewModel: TodayViewModel?
+    @State private var showQuickLog = false
+    @State private var showWalkingLog = false
     
     var body: some View {
         Group {
@@ -53,14 +55,14 @@ struct TodayView: View {
                     targetMinutes: viewModel.walkingTargetMinutes,
                     progress: viewModel.walkingProgress,
                     onLogWalk: {
-                        router.navigate(to: .walkingLog)
+                        showWalkingLog = true
                     }
                 )
                 
                 // Quick Log Card
                 QuickLogCard(
                     onTap: {
-                        router.navigate(to: .quickLog)
+                        showQuickLog = true
                     }
                 )
                 
@@ -78,6 +80,12 @@ struct TodayView: View {
         }
         .refreshable {
             await viewModel.refreshData()
+        }
+        .sheet(isPresented: $showQuickLog) {
+            QuickLogSheet()
+        }
+        .sheet(isPresented: $showWalkingLog) {
+            WalkingLogSheet()
         }
         .alert("Error", isPresented: errorBinding(viewModel: viewModel)) {
             Button("OK") { viewModel.clearError() }

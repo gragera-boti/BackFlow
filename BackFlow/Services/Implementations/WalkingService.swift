@@ -58,6 +58,7 @@ final class WalkingService: WalkingServiceProtocol {
     
     func logWalking(durationMinutes: Int, source: String, notes: String?) async throws(WalkingServiceError) -> WalkingLog {
         let log = WalkingLog(
+            date: Date(),
             durationMinutes: durationMinutes,
             source: source,
             notes: notes

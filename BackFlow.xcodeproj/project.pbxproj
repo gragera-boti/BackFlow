@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF2AB8A12D17B94F00FDB3DB /* WalkingLogSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8A02D17B94F00FDB3DB /* WalkingLogSheet.swift */; };
+		AF2AB8A32D17B94F00FDB3DC /* ExerciseDetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8A22D17B94F00FDB3DC /* ExerciseDetailContainer.swift */; };
+		AF2AB8A52D17B94F00FDB3DD /* EducationDetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8A42D17B94F00FDB3DD /* EducationDetailContainer.swift */; };
+		AF2AB8A72D17B94F00FDB3DE /* SessionPlayerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8A62D17B94F00FDB3DE /* SessionPlayerContainer.swift */; };
+		AF2AB8A92D17B94F00FDB3DF /* ExerciseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8A82D17B94F00FDB3DF /* ExerciseDetailViewModel.swift */; };
+		AF2AB8AB2D17B94F00FDB3E0 /* EducationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8AA2D17B94F00FDB3E0 /* EducationDetailViewModel.swift */; };
+		AF2AB8AD2D17B94F00FDB3E1 /* SessionPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2AB8AC2D17B94F00FDB3E1 /* SessionPlayerViewModel.swift */; };
 		004F51F2E290DADB5B2008BE /* EducationLibraryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FB531DFE417796CD007B44 /* EducationLibraryList.swift */; };
 		0193FD39A67ED4F7A2E2B5F4 /* ProgressionDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91626EEEA48C8DEC8E524518 /* ProgressionDecision.swift */; };
 		01F99B0A19908391FE286654 /* SessionPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E4A3D97E89C3AEA6AA72CE /* SessionPlayerView.swift */; };
@@ -86,6 +93,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF2AB8A02D17B94F00FDB3DB /* WalkingLogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLogSheet.swift; sourceTree = "<group>"; };
+		AF2AB8A22D17B94F00FDB3DC /* ExerciseDetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailContainer.swift; sourceTree = "<group>"; };
+		AF2AB8A42D17B94F00FDB3DD /* EducationDetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailContainer.swift; sourceTree = "<group>"; };
+		AF2AB8A62D17B94F00FDB3DE /* SessionPlayerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlayerContainer.swift; sourceTree = "<group>"; };
+		AF2AB8A82D17B94F00FDB3DF /* ExerciseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetailViewModel.swift; sourceTree = "<group>"; };
+		AF2AB8AA2D17B94F00FDB3E0 /* EducationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailViewModel.swift; sourceTree = "<group>"; };
+		AF2AB8AC2D17B94F00FDB3E1 /* SessionPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlayerViewModel.swift; sourceTree = "<group>"; };
 		0B8F6DCCB054FC18266C2611 /* StatsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsGrid.swift; sourceTree = "<group>"; };
 		15091FAF733B05FF28A530A0 /* PlanOverviewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanOverviewSection.swift; sourceTree = "<group>"; };
 		18AC3301C1667326D1133AF5 /* QuickLogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickLogSheet.swift; sourceTree = "<group>"; };
@@ -200,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				94E4A3D97E89C3AEA6AA72CE /* SessionPlayerView.swift */,
+				AF2AB8A62D17B94F00FDB3DE /* SessionPlayerContainer.swift */,
+				AF2AB8AC2D17B94F00FDB3E1 /* SessionPlayerViewModel.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -388,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				18AC3301C1667326D1133AF5 /* QuickLogSheet.swift */,
+				AF2AB8A02D17B94F00FDB3DB /* WalkingLogSheet.swift */,
 			);
 			path = Sheets;
 			sourceTree = "<group>";
@@ -397,6 +414,10 @@
 			children = (
 				4E530BAF6C7E0E69BE3D5950 /* EducationDetailView.swift */,
 				966776DCA0A29EEFE3246484 /* ExerciseDetailView.swift */,
+				AF2AB8A22D17B94F00FDB3DC /* ExerciseDetailContainer.swift */,
+				AF2AB8A42D17B94F00FDB3DD /* EducationDetailContainer.swift */,
+				AF2AB8A82D17B94F00FDB3DF /* ExerciseDetailViewModel.swift */,
+				AF2AB8AA2D17B94F00FDB3E0 /* EducationDetailViewModel.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -569,6 +590,10 @@
 				78B44E79363AF79370FD10F0 /* EducationServiceProtocol.swift in Sources */,
 				D9D2286FBA9A600CB9B735C1 /* Exercise.swift in Sources */,
 				2D1B0314FA86C05DA7333443 /* ExerciseDetailView.swift in Sources */,
+				AF2AB8A32D17B94F00FDB3DC /* ExerciseDetailContainer.swift in Sources */,
+				AF2AB8A52D17B94F00FDB3DD /* EducationDetailContainer.swift in Sources */,
+				AF2AB8A92D17B94F00FDB3DF /* ExerciseDetailViewModel.swift in Sources */,
+				AF2AB8AB2D17B94F00FDB3E0 /* EducationDetailViewModel.swift in Sources */,
 				16577D153A5BB5FB380867AD /* ExerciseLibraryList.swift in Sources */,
 				06A7D3F9FD53C37D261DE1AC /* ExerciseRow.swift in Sources */,
 				402AC31605D5331ADA95565F /* ExerciseService.swift in Sources */,
@@ -595,6 +620,7 @@
 				0193FD39A67ED4F7A2E2B5F4 /* ProgressionDecision.swift in Sources */,
 				180AE18BBCED94EA59075636 /* QuickLogCard.swift in Sources */,
 				928233AFE7A53F41D4E6A7DF /* QuickLogSheet.swift in Sources */,
+				AF2AB8A12D17B94F00FDB3DB /* WalkingLogSheet.swift in Sources */,
 				EDEEA540C3BCE0372636BA0A /* RedFlagsView.swift in Sources */,
 				90EC8C52D1BBE8297E6D8114 /* Reference.swift in Sources */,
 				240A677CF9E21C8E9009A1D7 /* RevenueCatSubscriptionService.swift in Sources */,
@@ -602,6 +628,8 @@
 				0737A173D5475AE872114597 /* ServiceContainer.swift in Sources */,
 				C7C6A239C6D8F44505D0F596 /* Session.swift in Sources */,
 				01F99B0A19908391FE286654 /* SessionPlayerView.swift in Sources */,
+				AF2AB8A72D17B94F00FDB3DE /* SessionPlayerContainer.swift in Sources */,
+				AF2AB8AD2D17B94F00FDB3E1 /* SessionPlayerViewModel.swift in Sources */,
 				BC4A1FBB34A9DDC3DB19053F /* SessionService.swift in Sources */,
 				40A3E989D39435BE8F5C80B9 /* SessionServiceProtocol.swift in Sources */,
 				894377865BEBB5DA038A3B06 /* SetLog.swift in Sources */,

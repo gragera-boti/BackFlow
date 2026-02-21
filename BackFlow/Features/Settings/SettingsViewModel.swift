@@ -42,15 +42,14 @@ final class SettingsViewModel {
     
     var reminderTimeDisplay: String? {
         guard let profile = userProfile,
-              let reminderTime = profile.reminderTime else { return nil }
+              let hour = profile.reminderHour,
+              let minute = profile.reminderMinute else { return nil }
         
-        let hour = reminderTime.hour ?? 9
-        let minute = reminderTime.minute ?? 0
         return "\(hour):\(String(format: "%02d", minute))"
     }
     
     var hasReminder: Bool {
-        return userProfile?.reminderTime != nil
+        return userProfile?.reminderHour != nil
     }
     
     var isCloudSyncEnabled: Bool {

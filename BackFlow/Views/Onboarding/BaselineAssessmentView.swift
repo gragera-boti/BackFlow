@@ -18,6 +18,7 @@ struct BaselineAssessmentView: View {
     ]
     
     var body: some View {
+        let _ = print("BaselineAssessmentView rendered")
         ScrollView {
             VStack(alignment: .leading, spacing: 32) {
                 Text("Baseline Assessment")
@@ -130,6 +131,7 @@ struct BaselineAssessmentView: View {
         
         // Create baseline symptom log
         let symptomLog = SymptomLog(
+            timestamp: Date(),
             painNow: painNow,
             notes: "Baseline: worst pain last 7 days = \(worstPainLast7Days)"
         )
@@ -142,6 +144,7 @@ struct BaselineAssessmentView: View {
         let overallScore = Double(10 - avgScore) * 10 // Convert to 0-100 scale
         
         let functionLog = FunctionLog(
+            date: Date(),
             tasksJSON: tasksJSON,
             overallScore: overallScore
         )
@@ -149,6 +152,7 @@ struct BaselineAssessmentView: View {
         
         // Create walking baseline log
         let walkingLog = WalkingLog(
+            date: Date(),
             durationMinutes: walkingMinutes,
             source: "manual",
             notes: "Baseline"

@@ -9,6 +9,7 @@ struct OnboardingFlow: View {
     @State private var redFlagsDetected = false
     
     var body: some View {
+        let _ = print("OnboardingFlow - currentStep: \(currentStep), redFlagsDetected: \(redFlagsDetected)")
         Group {
             switch currentStep {
             case 0:
@@ -27,10 +28,20 @@ struct OnboardingFlow: View {
                 if redFlagsDetected {
                     StopAndSeekCareView()
                 } else {
-                    GoalAndScheduleView(onContinue: { currentStep = 4 })
+                    GoalAndScheduleView(onContinue: { 
+                        print("OnboardingFlow: Advancing from GoalAndSchedule to BaselineAssessment")
+                        print("Current thread: \(Thread.isMainThread ? "Main" : "Background")")
+                        DispatchQueue.main.async {
+                            print("Setting currentStep to 4 on main queue")
+                            self.currentStep = 4
+                            print("currentStep is now: \(self.currentStep)")
+                        }
+                    })
+                    .id("goals-\(currentStep)") // Force view recreation
                 }
             case 4:
                 BaselineAssessmentView(onComplete: completeOnboarding)
+                    .id("baseline-\(currentStep)") // Force view recreation
             default:
                 Text("Onboarding complete")
             }
@@ -38,6 +49,13 @@ struct OnboardingFlow: View {
     }
     
     private func completeOnboarding() {
+        // Mark the user profile as having completed onboarding
+        let descriptor = FetchDescriptor<UserProfile>()
+        if let profiles = try? modelContext.fetch(descriptor),
+           let profile = profiles.first {
+            profile.onboardingCompleted = true
+            try? modelContext.save()
+        }
         onboardingCompleted = true
     }
 }

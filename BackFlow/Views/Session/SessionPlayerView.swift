@@ -222,6 +222,6 @@ struct PostSessionView: View {
 }
 
 #Preview {
-    SessionPlayerView(session: Session(templateId: "test", phaseId: "phase-1"))
+    SessionPlayerView(session: Session(date: Date(), templateId: "test", phaseId: "phase-1"))
         .modelContainer(for: [Exercise.self, Session.self], inMemory: true)
 }

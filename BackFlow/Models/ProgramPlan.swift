@@ -17,7 +17,7 @@ final class ProgramPlan {
     init(
         id: UUID = UUID(),
         programId: String,
-        startDate: Date = Date(),
+        startDate: Date,
         currentPhaseId: String,
         currentWeek: Int = 1,
         activityLadderLevel: Int = 0,

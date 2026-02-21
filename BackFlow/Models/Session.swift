@@ -16,7 +16,7 @@ final class Session {
     
     init(
         id: UUID = UUID(),
-        date: Date = Date(),
+        date: Date,
         templateId: String,
         phaseId: String,
         durationSec: Int = 0,

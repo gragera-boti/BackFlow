@@ -11,7 +11,7 @@ final class WalkingLog {
     
     init(
         id: UUID = UUID(),
-        date: Date = Date(),
+        date: Date,
         durationMinutes: Int,
         source: String = "manual",
         notes: String? = nil

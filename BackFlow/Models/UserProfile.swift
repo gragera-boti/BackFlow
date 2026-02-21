@@ -8,18 +8,20 @@ final class UserProfile {
     var goal: String
     var sessionsPerWeek: Int
     var equipment: [String]
-    var reminderTime: DateComponents?
+    var reminderHour: Int?
+    var reminderMinute: Int?
     var painThreshold: Int // default 3; editable Premium
     var cloudSyncEnabled: Bool
     var onboardingCompleted: Bool
     
     init(
         id: UUID = UUID(),
-        createdAt: Date = Date(),
+        createdAt: Date,
         goal: String = "",
         sessionsPerWeek: Int = 3,
         equipment: [String] = [],
-        reminderTime: DateComponents? = nil,
+        reminderHour: Int? = nil,
+        reminderMinute: Int? = nil,
         painThreshold: Int = 3,
         cloudSyncEnabled: Bool = false,
         onboardingCompleted: Bool = false
@@ -29,7 +31,8 @@ final class UserProfile {
         self.goal = goal
         self.sessionsPerWeek = sessionsPerWeek
         self.equipment = equipment
-        self.reminderTime = reminderTime
+        self.reminderHour = reminderHour
+        self.reminderMinute = reminderMinute
         self.painThreshold = painThreshold
         self.cloudSyncEnabled = cloudSyncEnabled
         self.onboardingCompleted = onboardingCompleted

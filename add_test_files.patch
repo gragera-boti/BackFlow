@@ -1,0 +1,65 @@
+--- a/BackFlow.xcodeproj/project.pbxproj
++++ b/BackFlow.xcodeproj/project.pbxproj
+@@ -100,6 +100,11 @@
+ 		93F8B7B02BEE321700D3F99F /* EducationDetailContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7AF2BEE321700D3F99F /* EducationDetailContainer.swift */; };
+ 		93F8B7B22BEE322800D3F99F /* SessionPlayerContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B12BEE322800D3F99F /* SessionPlayerContainer.swift */; };
+ 		93F8B7B42BEE323600D3F99F /* WalkingLogSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B32BEE323600D3F99F /* WalkingLogSheet.swift */; };
++		93F8B7B52BEE400000D3F99F /* GoalAndScheduleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B42BEE400000D3F99F /* GoalAndScheduleViewTests.swift */; };
++		93F8B7B62BEE400100D3F99F /* GoalAndScheduleViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B52BEE400100D3F99F /* GoalAndScheduleViewModelTests.swift */; };
++		93F8B7B72BEE400200D3F99F /* OnboardingFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B62BEE400200D3F99F /* OnboardingFlowTests.swift */; };
++		93F8B7B82BEE400300D3F99F /* OnboardingNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B72BEE400300D3F99F /* OnboardingNavigationTests.swift */; };
++		93F8B7B92BEE400400D3F99F /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F8B7B82BEE400400D3F99F /* OnboardingUITests.swift */; };
+ /* End PBXBuildFile section */
+ 
+ /* Begin PBXFileReference section */
+@@ -200,6 +205,11 @@
+ 		93F8B7AF2BEE321700D3F99F /* EducationDetailContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationDetailContainer.swift; sourceTree = "<group>"; };
+ 		93F8B7B12BEE322800D3F99F /* SessionPlayerContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlayerContainer.swift; sourceTree = "<group>"; };
+ 		93F8B7B32BEE323600D3F99F /* WalkingLogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLogSheet.swift; sourceTree = "<group>"; };
++		93F8B7B42BEE400000D3F99F /* GoalAndScheduleViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAndScheduleViewTests.swift; sourceTree = "<group>"; };
++		93F8B7B52BEE400100D3F99F /* GoalAndScheduleViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAndScheduleViewModelTests.swift; sourceTree = "<group>"; };
++		93F8B7B62BEE400200D3F99F /* OnboardingFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlowTests.swift; sourceTree = "<group>"; };
++		93F8B7B72BEE400300D3F99F /* OnboardingNavigationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationTests.swift; sourceTree = "<group>"; };
++		93F8B7B82BEE400400D3F99F /* OnboardingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+ /* End PBXFileReference section */
+ 
+ /* Begin PBXFrameworksBuildPhase section */
+@@ -250,6 +260,7 @@
+ 			children = (
+ 				93F8B6EF2BE15F3A00D3F99F /* ViewModelTests */,
+ 				93F8B6F02BE15F4500D3F99F /* ServiceTests */,
++				93F8B7BB2BEE401000D3F99F /* OnboardingTests */,
+ 			);
+ 			path = Tests;
+ 			sourceTree = "<group>";
+@@ -503,6 +514,18 @@
+ 			path = Sheets;
+ 			sourceTree = "<group>";
+ 		};
++		93F8B7BB2BEE401000D3F99F /* OnboardingTests */ = {
++			isa = PBXGroup;
++			children = (
++				93F8B7B42BEE400000D3F99F /* GoalAndScheduleViewTests.swift */,
++				93F8B7B52BEE400100D3F99F /* GoalAndScheduleViewModelTests.swift */,
++				93F8B7B62BEE400200D3F99F /* OnboardingFlowTests.swift */,
++				93F8B7B72BEE400300D3F99F /* OnboardingNavigationTests.swift */,
++				93F8B7B82BEE400400D3F99F /* OnboardingUITests.swift */,
++			);
++			path = OnboardingTests;
++			sourceTree = "<group>";
++		};
+ /* End PBXGroup section */
+ 
+ /* Begin PBXNativeTarget section */
+@@ -633,6 +656,11 @@
+ 				93F8B7212BEE155800D3F99F /* ExerciseDetailViewModel.swift in Sources */,
+ 				93F8B7232BEE155A00D3F99F /* EducationDetailViewModel.swift in Sources */,
+ 				93F8B7252BEE155B00D3F99F /* SessionPlayerViewModel.swift in Sources */,
++				93F8B7B52BEE400000D3F99F /* GoalAndScheduleViewTests.swift in Sources */,
++				93F8B7B62BEE400100D3F99F /* GoalAndScheduleViewModelTests.swift in Sources */,
++				93F8B7B72BEE400200D3F99F /* OnboardingFlowTests.swift in Sources */,
++				93F8B7B82BEE400300D3F99F /* OnboardingNavigationTests.swift in Sources */,
++				93F8B7B92BEE400400D3F99F /* OnboardingUITests.swift in Sources */,
+ 			);
+ 			runOnlyForDeploymentPostprocessing = 0;
+ 		};

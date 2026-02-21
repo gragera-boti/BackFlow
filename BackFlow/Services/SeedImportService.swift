@@ -1,39 +1,40 @@
 import Foundation
 import SwiftData
 
-@MainActor
 class SeedImportService {
-    static let shared = SeedImportService()
+    private let modelContext: ModelContext
     
-    private init() {}
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
     
-    func importSeedDataIfNeeded(modelContext: ModelContext) async {
+    func needsImport() -> Bool {
         // Check if already seeded
         let descriptor = FetchDescriptor<Exercise>()
-        if (try? modelContext.fetchCount(descriptor)) ?? 0 > 0 {
-            print("Seed data already imported")
-            return
-        }
-        
+        let count = try? modelContext.fetchCount(descriptor)
+        return count == 0
+    }
+    
+    func importAllData() async throws {
         print("Importing seed data...")
         
         // Import references
-        await importReferences(modelContext: modelContext)
+        try await importReferences()
         
         // Import exercises
-        await importExercises(modelContext: modelContext)
+        try await importExercises()
         
         // Import education cards
-        await importEducationCards(modelContext: modelContext)
+        try await importEducationCards()
         
         // Import program templates
-        await importProgramTemplates(modelContext: modelContext)
+        try await importProgramTemplates()
         
-        try? modelContext.save()
+        try modelContext.save()
         print("Seed data import complete")
     }
     
-    private func importReferences(modelContext: ModelContext) async {
+    private func importReferences() async throws {
         guard let url = Bundle.main.url(forResource: "references", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONDecoder().decode([ReferenceJSON].self, from: data) else {
@@ -57,7 +58,7 @@ class SeedImportService {
         }
     }
     
-    private func importExercises(modelContext: ModelContext) async {
+    private func importExercises() async throws {
         guard let url = Bundle.main.url(forResource: "exercises", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONDecoder().decode([ExerciseJSON].self, from: data) else {
@@ -91,7 +92,7 @@ class SeedImportService {
         }
     }
     
-    private func importEducationCards(modelContext: ModelContext) async {
+    private func importEducationCards() async throws {
         guard let url = Bundle.main.url(forResource: "education_cards", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONDecoder().decode([EducationCardJSON].self, from: data) else {
@@ -111,7 +112,7 @@ class SeedImportService {
         }
     }
     
-    private func importProgramTemplates(modelContext: ModelContext) async {
+    private func importProgramTemplates() async throws {
         guard let url = Bundle.main.url(forResource: "program_templates", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let template = try? JSONDecoder().decode(ProgramTemplateJSON.self, from: data) else {

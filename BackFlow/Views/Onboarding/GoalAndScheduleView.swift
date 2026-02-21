@@ -95,8 +95,18 @@ struct GoalAndScheduleView: View {
                     }
                 }
                 
-                Button(action: saveAndContinue) {
-                    Text("Continue")
+                Button(action: {
+                    print("Button action triggered")
+                    if selectedGoals.isEmpty {
+                        print("ERROR: No goals selected but button was tapped")
+                    } else {
+                        print("Goals selected: \(selectedGoals)")
+                        Task {
+                            await saveAndContinue()
+                        }
+                    }
+                }) {
+                    Text("Create My Plan")
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -111,25 +121,93 @@ struct GoalAndScheduleView: View {
         }
     }
     
-    private func saveAndContinue() {
+    @MainActor
+    private func saveAndContinue() async {
+        print("saveAndContinue called - selectedGoals: \(selectedGoals)")
+        
+        // Make sure we have goals selected
+        guard !selectedGoals.isEmpty else {
+            print("No goals selected - this shouldn't happen as button should be disabled")
+            return
+        }
+        
         // Create user profile
+        let components = reminderEnabled ? Calendar.current.dateComponents([.hour, .minute], from: reminderTime) : nil
         let profile = UserProfile(
+            createdAt: Date(),
             goal: Array(selectedGoals).joined(separator: ", "),
             sessionsPerWeek: sessionsPerWeek,
             equipment: Array(selectedEquipment),
-            reminderTime: reminderEnabled ? Calendar.current.dateComponents([.hour, .minute], from: reminderTime) : nil
+            reminderHour: components?.hour,
+            reminderMinute: components?.minute
         )
         
         modelContext.insert(profile)
-        try? modelContext.save()
+        print("UserProfile created and inserted")
         
-        // Schedule reminder if enabled
-        if reminderEnabled {
-            let components = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
-            NotificationService.shared.scheduleDailyReminder(at: components)
+        // Create initial program plan
+        let weekdays = generateWeekdaySchedule(sessionsPerWeek: sessionsPerWeek)
+        let programPlan = ProgramPlan(
+            programId: "standard-rehab-program",
+            startDate: Date(),
+            currentPhaseId: "phase-1",
+            currentWeek: 1,
+            activityLadderLevel: 0,
+            isPaused: false,
+            weekdays: weekdays
+        )
+        modelContext.insert(programPlan)
+        print("ProgramPlan created and inserted")
+        
+        do {
+            try modelContext.save()
+            print("Profile and program plan saved successfully")
+            
+            // Schedule reminder if enabled
+            if reminderEnabled {
+                let components = Calendar.current.dateComponents([.hour, .minute], from: reminderTime)
+                NotificationService.shared.scheduleDailyReminder(at: components)
+                print("Reminder scheduled")
+            }
+            
+            print("About to call onContinue")
+            // Add a small delay to ensure SwiftUI has processed the save
+            try? await Task.sleep(nanoseconds: 100_000_000) // 0.1 seconds
+            await MainActor.run {
+                onContinue()
+                print("onContinue called on MainActor")
+            }
+        } catch {
+            print("Error saving: \(error)")
+            // Still continue even if save fails for now
+            print("Calling onContinue despite error")
+            await MainActor.run {
+                onContinue()
+            }
         }
-        
-        onContinue()
+    }
+    
+    private func generateWeekdaySchedule(sessionsPerWeek: Int) -> [Int] {
+        // Evenly distribute sessions across the week
+        // 0 = Sunday, 1 = Monday, etc.
+        switch sessionsPerWeek {
+        case 1:
+            return [3] // Wednesday
+        case 2:
+            return [1, 4] // Monday, Thursday
+        case 3:
+            return [1, 3, 5] // Monday, Wednesday, Friday
+        case 4:
+            return [1, 2, 4, 5] // Monday, Tuesday, Thursday, Friday
+        case 5:
+            return [1, 2, 3, 4, 5] // Weekdays
+        case 6:
+            return [1, 2, 3, 4, 5, 6] // Monday through Saturday
+        case 7:
+            return [0, 1, 2, 3, 4, 5, 6] // Every day
+        default:
+            return [1, 3, 5] // Default to Mon/Wed/Fri
+        }
     }
 }
 

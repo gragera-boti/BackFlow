@@ -59,6 +59,7 @@ final class SessionService: SessionServiceProtocol {
         phaseId: String
     ) async throws(SessionServiceError) -> Session {
         let session = Session(
+            date: Date(),
             templateId: templateId,
             phaseId: phaseId
         )

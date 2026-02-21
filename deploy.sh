@@ -8,10 +8,12 @@ PROJECT="BackFlow.xcodeproj"
 SCHEME="BackFlow"
 
 echo "🔨 Building BackFlow..."
+# Using derivedDataPath to have a consistent build location
 xcodebuild -project $PROJECT \
   -scheme $SCHEME \
   -destination "id=$DEVICE_ID" \
   -configuration Debug \
+  -derivedDataPath build/ \
   clean build
 
 if [ $? -ne 0 ]; then
@@ -20,7 +22,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "📱 Installing on device..."
-APP_PATH=$(find ~/Library/Developer/Xcode/DerivedData -name "BackFlow.app" -path "*/Debug-iphoneos/*" | head -1)
+APP_PATH="build/Build/Products/Debug-iphoneos/BackFlow.app"
 
 xcrun devicectl device install app --device $DEVICE_ID "$APP_PATH"
 

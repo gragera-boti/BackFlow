@@ -19,7 +19,7 @@ final class SymptomLog {
     
     init(
         id: UUID = UUID(),
-        timestamp: Date = Date(),
+        timestamp: Date,
         painNow: Int? = nil,
         painAfterActivity: Int? = nil,
         painNextDay: Int? = nil,

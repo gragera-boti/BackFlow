@@ -10,7 +10,7 @@ final class FunctionLog {
     
     init(
         id: UUID = UUID(),
-        date: Date = Date(),
+        date: Date,
         tasksJSON: String,
         overallScore: Double
     ) {

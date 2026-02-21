@@ -105,6 +105,7 @@ final class TodayViewModelTests: XCTestCase {
         let mockProgram = MockProgramService()
         mockProgram.stubbedPlan = ProgramPlan(
             programId: "test",
+            startDate: Date(),
             currentPhaseId: "phase-1",
             currentWeek: 2,
             activityLadderLevel: 1,
