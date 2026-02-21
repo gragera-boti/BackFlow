@@ -4,16 +4,15 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.router) private var router
     @Query private var profiles: [UserProfile]
-    @State private var showOnboarding = false
     
     var body: some View {
         @Bindable var bindableRouter = router
+        let _ = print("ContentView: profiles.count = \(profiles.count), onboardingCompleted = \(profiles.first?.onboardingCompleted ?? false)")
+        
+        let showOnboarding = profiles.isEmpty || !(profiles.first?.onboardingCompleted ?? false)
         
         if showOnboarding {
             OnboardingFlow()
-                .onAppear {
-                    checkOnboardingStatus()
-                }
         } else {
             NavigationStack(path: $bindableRouter.path) {
                 TabView {
@@ -41,15 +40,7 @@ struct ContentView: View {
                     destinationView(for: destination)
                 }
             }
-            .onAppear {
-                checkOnboardingStatus()
-            }
         }
-    }
-    
-    private func checkOnboardingStatus() {
-        // If no profiles exist or onboarding not completed, show onboarding
-        showOnboarding = profiles.isEmpty || !(profiles.first?.onboardingCompleted ?? false)
     }
     
     @ViewBuilder

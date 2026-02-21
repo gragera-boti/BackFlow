@@ -49,14 +49,28 @@ struct OnboardingFlow: View {
     }
     
     private func completeOnboarding() {
+        print("🎯 OnboardingFlow.completeOnboarding() called")
+        print("Current thread: \(Thread.isMainThread ? "Main" : "Background")")
+        
         // Mark the user profile as having completed onboarding
         let descriptor = FetchDescriptor<UserProfile>()
         if let profiles = try? modelContext.fetch(descriptor),
            let profile = profiles.first {
+            print("✅ Found UserProfile, setting onboardingCompleted = true")
             profile.onboardingCompleted = true
-            try? modelContext.save()
+            do {
+                try modelContext.save()
+                print("✅ Successfully saved profile with onboardingCompleted = true")
+            } catch {
+                print("❌ Error saving profile: \(error)")
+            }
+        } else {
+            print("❌ ERROR: No UserProfile found!")
         }
+        
+        print("Setting @AppStorage onboardingCompleted = true")
         onboardingCompleted = true
+        print("✅ Onboarding complete!")
     }
 }
 
