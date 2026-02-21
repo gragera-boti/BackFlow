@@ -10,6 +10,7 @@ final class ServiceContainer {
     let exerciseService: ExerciseServiceProtocol
     let educationService: EducationServiceProtocol
     let walkingService: WalkingServiceProtocol
+    let subscriptionService: SubscriptionServiceProtocol
     
     init(modelContext: ModelContext) {
         self.programService = ProgramService(modelContext: modelContext)
@@ -17,6 +18,7 @@ final class ServiceContainer {
         self.exerciseService = ExerciseService(modelContext: modelContext)
         self.educationService = EducationService(modelContext: modelContext)
         self.walkingService = WalkingService(modelContext: modelContext)
+        self.subscriptionService = RevenueCatSubscriptionService.shared
     }
 }
 

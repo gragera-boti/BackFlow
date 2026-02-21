@@ -107,9 +107,4 @@ class PlanEngine {
     }
 }
 
-enum ProgressionDecision {
-    case progress(reason: String)
-    case `repeat`(reason: String)
-    case regress(reason: String)
-    case pausePlan(reason: String)
-}
+// ProgressionDecision moved to Models/Enums/ProgressionDecision.swift

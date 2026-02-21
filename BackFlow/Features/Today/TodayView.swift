@@ -11,7 +11,7 @@ struct TodayView: View {
             if let viewModel = viewModel {
                 contentView(viewModel: viewModel)
             } else {
-                ProgressView()
+                SwiftUI.ProgressView()
                     .task {
                         guard let services = services else { return }
                         viewModel = TodayViewModel(

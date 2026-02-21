@@ -14,6 +14,11 @@ settings:
   SUPPORTS_MACCATALYST: false
   IPHONEOS_DEPLOYMENT_TARGET: 17.0
 
+packages:
+  RevenueCat:
+    url: https://github.com/RevenueCat/purchases-ios.git
+    from: 4.40.0
+
 targets:
   BackFlow:
     type: application
@@ -29,6 +34,11 @@ targets:
       - path: BackFlow/SeedData
         type: folder
       - path: BackFlow/Assets.xcassets
+      - path: BackFlow.storekit
+    
+    dependencies:
+      - package: RevenueCat
+        product: RevenueCat
     
     info:
       path: Info.plist
@@ -80,5 +90,9 @@ schemes:
         BackFlow: all
     run:
       config: Debug
+      storeKitConfigurationPath: BackFlow.storekit
+    test:
+      config: Debug
+      storeKitConfigurationPath: BackFlow.storekit
     archive:
       config: Release

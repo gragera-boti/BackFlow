@@ -12,18 +12,17 @@ struct ContentView: View {
                         Label("Today", systemImage: "calendar")
                     }
                 
-                // TODO: Add other tab views (Plan, Progress, Library)
-                Text("Plan")
+                PlanView()
                     .tabItem {
                         Label("Plan", systemImage: "list.bullet.clipboard")
                     }
                 
-                Text("Progress")
+                ProgressTrackingView()
                     .tabItem {
                         Label("Progress", systemImage: "chart.xyaxis.line")
                     }
                 
-                Text("Library")
+                LibraryView()
                     .tabItem {
                         Label("Library", systemImage: "books.vertical")
                     }

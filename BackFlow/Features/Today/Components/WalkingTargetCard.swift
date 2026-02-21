@@ -11,7 +11,7 @@ struct WalkingTargetCard: View {
             VStack(alignment: .leading, spacing: Theme.Spacing.medium) {
                 header
                 
-                ProgressView(value: progress)
+                SwiftUI.ProgressView(value: progress)
                     .tint(Theme.Colors.secondary)
                 
                 logButton
@@ -43,7 +43,7 @@ struct WalkingTargetCard: View {
                 .padding(.vertical, Theme.Spacing.xSmall)
                 .background(Theme.Colors.secondary.opacity(0.2))
                 .foregroundStyle(Theme.Colors.secondary)
-                .cornerRadius(Theme.CornerRadius.small)
+                .clipShape(RoundedRectangle(cornerRadius: Theme.CornerRadius.small))
         }
     }
 }
