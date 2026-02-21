@@ -25,11 +25,33 @@ targets:
     
     resources:
       - SeedData
-      - Info.plist
+    
+    info:
+      path: Info.plist
+      properties:
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundleDisplayName: BackFlow
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        CFBundlePackageType: APPL
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        NSUserNotificationsUsageDescription: "BackFlow sends daily reminders for your rehab sessions and next-day check-ins to help you stay on track."
+        NSHealthShareUsageDescription: "BackFlow can import your walking data from Health to automatically track your activity progress."
+        NSHealthUpdateUsageDescription: "BackFlow can save your session data to Health."
+        CFBundleURLTypes:
+          - CFBundleURLSchemes: [backflow]
+            CFBundleURLName: com.backflow.app
     
     settings:
       base:
-        INFOPLIST_FILE: Info.plist
+        GENERATE_INFOPLIST_FILE: true
         PRODUCT_BUNDLE_IDENTIFIER: com.albgra.BackFlow
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         CODE_SIGN_STYLE: Automatic
