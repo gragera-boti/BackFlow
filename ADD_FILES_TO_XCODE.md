@@ -1,44 +1,95 @@
-# Add These Files to Xcode
+# Adding New Files to Xcode Project
 
-The build is failing because these new files need to be added to the Xcode project:
+## Problem
+The following files were created but are not yet part of the Xcode project:
 
-## Steps to Add Files:
+### ViewModels
+- `BackFlow/Views/Onboarding/GoalAndScheduleViewModel.swift`
 
-1. **In Xcode**, right-click on the appropriate group in the project navigator
-2. Choose **"Add Files to BackFlow..."**
-3. Navigate to and select these files:
-4. Make sure **"Copy items if needed"** is UNCHECKED (files already exist)
-5. Make sure **"BackFlow"** target is checked
+### Components
+- `BackFlow/Views/Onboarding/Components/GoalToggle.swift`
+- `BackFlow/Views/Onboarding/Components/EquipmentToggle.swift`
+- `BackFlow/Views/Onboarding/Components/RedFlagQuestion.swift`
+- `BackFlow/Views/Onboarding/Components/ReminderSettings.swift`
+- `BackFlow/Views/Onboarding/Components/SessionsPerWeekPicker.swift`
 
-## Files to Add:
+## Solution
 
-### Views/Sheets/
-- `WalkingLogSheet.swift`
+### Option 1: Add Files via Xcode GUI (Recommended)
+1. Open Xcode:
+   ```bash
+   open BackFlow.xcodeproj
+   ```
 
-### Views/Detail/
-- `ExerciseDetailContainer.swift`
-- `EducationDetailContainer.swift`
-- `ExerciseDetailViewModel.swift`
-- `EducationDetailViewModel.swift`
+2. In the Project Navigator (left sidebar), right-click on `BackFlow/Views/Onboarding`
 
-### Views/Session/
-- `SessionPlayerContainer.swift`
-- `SessionPlayerViewModel.swift`
+3. Select "Add Files to BackFlow..."
 
-## Verify Files Were Added:
-After adding, make sure each file appears in:
-1. The project navigator (left sidebar)
-2. The target's "Compile Sources" build phase
+4. Navigate to the Components folder and select all the new component files
 
-## Then Build:
-Once added, run:
+5. Make sure "Copy items if needed" is **unchecked** (files are already in the right place)
+
+6. Make sure "BackFlow" target is **checked**
+
+7. Click "Add"
+
+8. Repeat for the ViewModel file
+
+9. Build the project (Cmd+B)
+
+### Option 2: Use Script (If you have xcodeproj gem)
 ```bash
-./deploy.sh
+gem install xcodeproj
+ruby add_files_to_project.rb
 ```
 
-## Alternative: Delete build folder and rebuild
-Sometimes Xcode picks up new files automatically:
+### Option 3: Let Xcode Auto-Detect
+Sometimes Xcode will auto-detect new files if you:
+1. Close Xcode
+2. Delete DerivedData: `rm -rf ~/Library/Developer/Xcode/DerivedData/BackFlow-*`
+3. Reopen the project
+4. Clean build folder (Cmd+Shift+K)
+5. Build (Cmd+B)
+
+---
+
+## What These Files Do
+
+### GoalAndScheduleViewModel
+- **Purpose**: Manages business logic for goal and schedule selection
+- **Pattern**: `@MainActor @Observable final class` with protocol-based DI
+- **Benefits**: 
+  - Testable business logic
+  - No SwiftUI in ViewModel
+  - Proper error handling with OSLog
+
+### Components
+All components follow the pattern:
+- Single responsibility
+- Accessibility labels built-in
+- Reusable across views
+- Under 80 lines each
+
+---
+
+## After Adding Files
+
+Once the files are added to the project, the build should succeed. You'll have:
+
+✅ Phase 2 complete: All onboarding views refactored with proper MVVM
+✅ All components extracted and accessible
+✅ OSLog instead of print() throughout onboarding
+✅ Proper error handling
+
+Then you can proceed to Phase 3 (extract remaining large views) or Phase 4 (add tests).
+
+---
+
+## Verification
+
+After adding files, verify:
 ```bash
-rm -rf build
-./deploy.sh
+xcodebuild -project BackFlow.xcodeproj -scheme BackFlow -destination 'platform=iOS Simulator,name=iPhone 17 Pro Max' build
 ```
+
+Should output: `** BUILD SUCCEEDED **`

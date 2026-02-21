@@ -1,5 +1,8 @@
 import SwiftUI
 import SwiftData
+import OSLog
+
+private let logger = Logger(subsystem: "com.backflow.app", category: "OnboardingFlow")
 
 struct OnboardingFlow: View {
     @Environment(\.modelContext) private var modelContext
@@ -9,7 +12,6 @@ struct OnboardingFlow: View {
     @State private var redFlagsDetected = false
     
     var body: some View {
-        let _ = print("OnboardingFlow - currentStep: \(currentStep), redFlagsDetected: \(redFlagsDetected)")
         Group {
             switch currentStep {
             case 0:
@@ -29,15 +31,10 @@ struct OnboardingFlow: View {
                     StopAndSeekCareView()
                 } else {
                     GoalAndScheduleView(onContinue: { 
-                        print("OnboardingFlow: Advancing from GoalAndSchedule to BaselineAssessment")
-                        print("Current thread: \(Thread.isMainThread ? "Main" : "Background")")
-                        DispatchQueue.main.async {
-                            print("Setting currentStep to 4 on main queue")
-                            self.currentStep = 4
-                            print("currentStep is now: \(self.currentStep)")
-                        }
+                        logger.info("Advancing from GoalAndSchedule to BaselineAssessment")
+                        currentStep = 4
                     })
-                    .id("goals-\(currentStep)") // Force view recreation
+                    .id("goals-\(currentStep)")
                 }
             case 4:
                 BaselineAssessmentView(onComplete: completeOnboarding)
@@ -49,28 +46,33 @@ struct OnboardingFlow: View {
     }
     
     private func completeOnboarding() {
-        print("🎯 OnboardingFlow.completeOnboarding() called")
-        print("Current thread: \(Thread.isMainThread ? "Main" : "Background")")
+        logger.info("Completing onboarding")
         
         // Mark the user profile as having completed onboarding
         let descriptor = FetchDescriptor<UserProfile>()
-        if let profiles = try? modelContext.fetch(descriptor),
-           let profile = profiles.first {
-            print("✅ Found UserProfile, setting onboardingCompleted = true")
-            profile.onboardingCompleted = true
-            do {
-                try modelContext.save()
-                print("✅ Successfully saved profile with onboardingCompleted = true")
-            } catch {
-                print("❌ Error saving profile: \(error)")
-            }
-        } else {
-            print("❌ ERROR: No UserProfile found!")
-        }
         
-        print("Setting @AppStorage onboardingCompleted = true")
-        onboardingCompleted = true
-        print("✅ Onboarding complete!")
+        do {
+            guard let profiles = try? modelContext.fetch(descriptor),
+                  let profile = profiles.first else {
+                logger.error("No UserProfile found during onboarding completion")
+                // Still mark as complete to prevent user from being stuck
+                onboardingCompleted = true
+                return
+            }
+            
+            profile.onboardingCompleted = true
+            
+            try modelContext.save()
+            logger.info("✅ Successfully marked profile as onboarding complete")
+            
+            onboardingCompleted = true
+            logger.info("✅ Onboarding flow complete")
+            
+        } catch {
+            logger.error("Failed to save onboarding completion: \(error.localizedDescription)")
+            // Still mark as complete to prevent user from being stuck
+            onboardingCompleted = true
+        }
     }
 }
 
@@ -114,6 +116,8 @@ struct WelcomeView: View {
                     .cornerRadius(12)
             }
             .padding(.horizontal)
+            .accessibilityLabel("Get started with BackFlow")
+            .accessibilityHint("Begins the onboarding process")
         }
         .padding()
     }
@@ -181,6 +185,7 @@ struct DisclaimerView: View {
                     .font(.body)
             }
             .padding(.horizontal)
+            .accessibilityLabel("I understand and accept these limitations")
             
             Button(action: onContinue) {
                 Text("Continue")
@@ -193,6 +198,8 @@ struct DisclaimerView: View {
             }
             .disabled(!accepted)
             .padding(.horizontal)
+            .accessibilityLabel("Continue")
+            .accessibilityHint("Proceeds to safety screening")
         }
         .padding()
     }
