@@ -84,37 +84,6 @@ struct PostSessionView: View {
     }
 }
 
-// Placeholder PainSlider if not already available globally
-struct PainSlider: View {
-    @Binding var value: Int
-    
-    var body: some View {
-        VStack(spacing: 8) {
-            Slider(value: .init(
-                get: { Double(value) },
-                set: { value = Int($0) }
-            ), in: 0...10, step: 1)
-            
-            HStack {
-                Text("No pain")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                Spacer()
-                Text("\(value)/10")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                Spacer()
-                Text("Worst pain")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-        }
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(12)
-    }
-}
-
 #Preview {
     PostSessionView(
         session: Session(date: Date(), templateId: "test", phaseId: "phase-1"),
