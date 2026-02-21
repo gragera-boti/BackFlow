@@ -100,6 +100,18 @@
 		7A55989C723D40D6AEF76035 /* PainSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39751F613974A79960EE10D /* PainSlider.swift */; };
 		5EBE6856877446678E34FA97 /* FunctionTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F935A6DB543C387EE45C8 /* FunctionTaskRow.swift */; };
 		7D1272B2B5A2445F9D5EABC2 /* WalkingBaselinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6B4874E2B48D09B8C10D4 /* WalkingBaselinePicker.swift */; };
+				65DC5CF057544968B2FBE5AE /* CommonMistakesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7021CE5EE8F6434589E68663 /* CommonMistakesSection.swift */; };
+		C6FE20C7FFA642F089E4DA70 /* DosageSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AC198F55A34145A4FAF76E /* DosageSection.swift */; };
+		27C2C192521748A59E5EC7D8 /* ExerciseInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884CFA1AFD7F4C00A83A5698 /* ExerciseInfoSection.swift */; };
+		E0FE88205C324551B24D2228 /* ExerciseIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C0D1CF116A46DB935DBF0A /* ExerciseIllustration.swift */; };
+		E72D651316A849789BF3E07A /* VariationsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6DC1E89AE409E9264BD92 /* VariationsSection.swift */; };
+		B9816124A868474299EC6CB3 /* PrimaryCuesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C31FDA680D4F59AA16689D /* PrimaryCuesSection.swift */; };
+		3DE92E49C54D41C39BCA8A90 /* SessionActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E43A1A372418FB057E284 /* SessionActionButtons.swift */; };
+		4A830683AB084785A28F4490 /* SessionCuesCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1D10923D5F4D4D86D23DA6 /* SessionCuesCard.swift */; };
+		8FBD6ED772AB4C16A25514A8 /* SessionProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 818073C88A7E41329121B7CC /* SessionProgressBar.swift */; };
+		7F783D99B8114208BE715F67 /* SessionExerciseInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF054A144CB40DD9A20AE64 /* SessionExerciseInfo.swift */; };
+		8777DEC3587147358A02FDB2 /* SessionExerciseIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4861D75FDDA4091993A8E60 /* SessionExerciseIllustration.swift */; };
+		05CC6EA411F049E3A7862920 /* PostSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678BA881B5754579BF9F7C79 /* PostSessionView.swift */; };
 		/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +208,18 @@
 		E39751F613974A79960EE10D /* PainSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainSlider.swift; sourceTree = "<group>"; };
 		858F935A6DB543C387EE45C8 /* FunctionTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTaskRow.swift; sourceTree = "<group>"; };
 		A3A6B4874E2B48D09B8C10D4 /* WalkingBaselinePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingBaselinePicker.swift; sourceTree = "<group>"; };
+				7021CE5EE8F6434589E68663 /* CommonMistakesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonMistakesSection.swift; sourceTree = "<group>"; };
+		19AC198F55A34145A4FAF76E /* DosageSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageSection.swift; sourceTree = "<group>"; };
+		884CFA1AFD7F4C00A83A5698 /* ExerciseInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoSection.swift; sourceTree = "<group>"; };
+		51C0D1CF116A46DB935DBF0A /* ExerciseIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseIllustration.swift; sourceTree = "<group>"; };
+		9EB6DC1E89AE409E9264BD92 /* VariationsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariationsSection.swift; sourceTree = "<group>"; };
+		C0C31FDA680D4F59AA16689D /* PrimaryCuesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryCuesSection.swift; sourceTree = "<group>"; };
+		0D5E43A1A372418FB057E284 /* SessionActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActionButtons.swift; sourceTree = "<group>"; };
+		CE1D10923D5F4D4D86D23DA6 /* SessionCuesCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCuesCard.swift; sourceTree = "<group>"; };
+		818073C88A7E41329121B7CC /* SessionProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionProgressBar.swift; sourceTree = "<group>"; };
+		2FF054A144CB40DD9A20AE64 /* SessionExerciseInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExerciseInfo.swift; sourceTree = "<group>"; };
+		C4861D75FDDA4091993A8E60 /* SessionExerciseIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionExerciseIllustration.swift; sourceTree = "<group>"; };
+		678BA881B5754579BF9F7C79 /* PostSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSessionView.swift; sourceTree = "<group>"; };
 		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,8 +260,23 @@
 				94E4A3D97E89C3AEA6AA72CE /* SessionPlayerView.swift */,
 				AF2AB8A62D17B94F00FDB3DE /* SessionPlayerContainer.swift */,
 				AF2AB8AC2D17B94F00FDB3E1 /* SessionPlayerViewModel.swift */,
+			
+				SESC00000000000000000001 /* Components */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+
+		SESC00000000000000000001 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0D5E43A1A372418FB057E284 /* Component */,
+				CE1D10923D5F4D4D86D23DA6 /* Component */,
+				818073C88A7E41329121B7CC /* Component */,
+				2FF054A144CB40DD9A20AE64 /* Component */,
+				678BA881B5754579BF9F7C79 /* Component */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		0B5B4A208AB66075667E4536 /* BackFlow */ = {
@@ -458,8 +497,25 @@
 				AF2AB8A42D17B94F00FDB3DD /* EducationDetailContainer.swift */,
 				AF2AB8A82D17B94F00FDB3DF /* ExerciseDetailViewModel.swift */,
 				AF2AB8AA2D17B94F00FDB3E0 /* EducationDetailViewModel.swift */,
+			
+				DETC00000000000000000001 /* Components */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+
+		DETC00000000000000000001 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7021CE5EE8F6434589E68663 /* Component */,
+				19AC198F55A34145A4FAF76E /* Component */,
+				884CFA1AFD7F4C00A83A5698 /* Component */,
+				51C0D1CF116A46DB935DBF0A /* Component */,
+				9EB6DC1E89AE409E9264BD92 /* Component */,
+				C0C31FDA680D4F59AA16689D /* Component */,
+				C4861D75FDDA4091993A8E60 /* Component */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		C9FFE6E6A719E9E630C58760 /* Progress */ = {
@@ -703,6 +759,19 @@
 				7A55989C723D40D6AEF76035 /* PainSlider.swift in Sources */,
 				5EBE6856877446678E34FA97 /* FunctionTaskRow.swift in Sources */,
 				7D1272B2B5A2445F9D5EABC2 /* WalkingBaselinePicker.swift in Sources */,
+			
+				65DC5CF057544968B2FBE5AE /* CommonMistakesSection.swift in Sources */,
+				C6FE20C7FFA642F089E4DA70 /* DosageSection.swift in Sources */,
+				27C2C192521748A59E5EC7D8 /* ExerciseInfoSection.swift in Sources */,
+				E0FE88205C324551B24D2228 /* ExerciseIllustration.swift in Sources */,
+				E72D651316A849789BF3E07A /* VariationsSection.swift in Sources */,
+				B9816124A868474299EC6CB3 /* PrimaryCuesSection.swift in Sources */,
+				3DE92E49C54D41C39BCA8A90 /* SessionActionButtons.swift in Sources */,
+				4A830683AB084785A28F4490 /* SessionCuesCard.swift in Sources */,
+				8FBD6ED772AB4C16A25514A8 /* SessionProgressBar.swift in Sources */,
+				7F783D99B8114208BE715F67 /* SessionExerciseInfo.swift in Sources */,
+				8777DEC3587147358A02FDB2 /* SessionExerciseIllustration.swift in Sources */,
+				05CC6EA411F049E3A7862920 /* PostSessionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
