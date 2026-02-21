@@ -40,28 +40,66 @@ BackFlow is an iOS-only app designed to help people self-manage non-specific low
 
 ## Architecture
 
+The app follows strict **MVVM + Services** architecture with protocol-based dependency injection:
+
 ```
 BackFlow/
-├── BackFlowApp.swift          # App entry point
-├── Models.swift                # SwiftData models
+├── BackFlowApp.swift              # App entry point with DI setup
+├── ContentView.swift              # Root navigation with TabView
+│
+├── Theme/
+│   ├── Theme.swift                # Design tokens (colors, spacing, typography)
+│   └── Components/                # Reusable UI components
+│       ├── PrimaryButton.swift
+│       └── CardView.swift
+│
+├── Models/
+│   ├── UserProfile.swift          # Individual @Model classes
+│   ├── Exercise.swift
+│   ├── Session.swift
+│   └── ... (other models)
+│
 ├── Services/
-│   ├── SeedImportService.swift    # JSON seed import
-│   ├── PlanEngine.swift           # Progression logic
-│   ├── NotificationService.swift  # Local notifications
-│   └── SubscriptionService.swift  # StoreKit 2
-├── Views/
-│   ├── Onboarding/            # Welcome → Safety → Baseline
-│   ├── Main/                  # Today, Plan, Progress, Library tabs
-│   ├── Detail/                # Exercise & Education details
-│   ├── Session/               # Session player
-│   ├── Sheets/                # Quick log, etc.
-│   └── Settings/              # Settings & Premium
-└── SeedData/                  # JSON content
-    ├── exercises.json
-    ├── program_templates.json
-    ├── education_cards.json
-    └── references.json
+│   ├── ServiceContainer.swift     # DI container
+│   ├── Protocols/                 # Service protocols
+│   │   ├── ProgramServiceProtocol.swift
+│   │   ├── SessionServiceProtocol.swift
+│   │   └── ... (other protocols)
+│   └── Implementations/
+│       ├── ProgramService.swift
+│       ├── RevenueCatSubscriptionService.swift
+│       └── ... (other implementations)
+│
+├── Features/                      # Feature-based organization
+│   ├── Today/
+│   │   ├── TodayView.swift
+│   │   ├── TodayViewModel.swift
+│   │   └── Components/
+│   ├── Plan/
+│   ├── Progress/
+│   ├── Library/
+│   └── Settings/
+│
+├── Navigation/
+│   └── AppRouter.swift            # Centralized navigation
+│
+├── SeedData/                      # JSON content
+│   ├── exercises.json
+│   ├── program_templates.json
+│   └── education_cards.json
+│
+└── Tests/
+    ├── ViewModelTests/
+    └── ServiceTests/
 ```
+
+### Key Principles
+
+- **ViewModels:** `@MainActor @Observable` classes managing state
+- **Services:** Protocol-based with dependency injection
+- **Views:** Pure presentation, no business logic
+- **Navigation:** Centralized router pattern
+- **Testing:** Protocol-based mocking for easy unit testing
 
 ## Core Logic: 24-Hour Response Progression
 
@@ -145,16 +183,26 @@ All exercises and education cards include `evidenceRefs` (links to published res
 
 ## Subscription Setup
 
+### RevenueCat Integration
+The app uses RevenueCat for subscription management with separate test/production environments:
+
+- **Debug builds:** Use RevenueCat test store
+- **Release builds:** Use real App Store
+
 ### App Store Connect
-1. Create app record
+1. Create app record with bundle ID: `com.albgra.BackFlow`
 2. Configure In-App Purchases:
-   - Monthly auto-renewable subscription
-   - Yearly auto-renewable subscription
-3. Set up subscription groups
-4. Optional: 7-day free trial
+   - Monthly: `com.albgra.BackFlow.premium.monthly` ($2.99)
+   - Yearly: `com.albgra.BackFlow.premium.yearly` ($19.99)
+3. Set up subscription group: "BackFlow Premium"
+4. 7-day free trial enabled for both plans
 
 ### Testing
-Use StoreKit configuration file in Xcode for local testing (no server required)
+- StoreKit configuration file (`BackFlow.storekit`) included for local testing
+- RevenueCat sandbox environment enabled for debug builds
+- Test purchases without charging real money
+
+See `ASC_REVENUECAT_SETUP.md` for complete setup instructions.
 
 ## CloudKit Sync Strategy
 
