@@ -1,0 +1,156 @@
+[
+  {
+    "key": "who2023_cplbp_guideline",
+    "type": "guideline",
+    "title": "WHO guideline for non-surgical management of chronic primary low back pain in adults in primary and community care settings",
+    "authors": "World Health Organization",
+    "year": 2023,
+    "journal": "WHO (Guideline)",
+    "doi": "",
+    "url": "https://www.who.int/publications/i/item/9789240081789",
+    "notes": "Primary global guideline; includes recommended and not recommended intervention classes and emphasizes a person-centred, biopsychosocial approach."
+  },
+  {
+    "key": "who2023_cplbp_summary",
+    "type": "guideline_summary",
+    "title": "Summary brochure: WHO guideline for chronic primary low back pain",
+    "authors": "World Health Organization",
+    "year": 2023,
+    "journal": "WHO (PDF brochure)",
+    "doi": "",
+    "url": "https://cdn.who.int/media/docs/default-source/mca-documents/ageing/lbp/summary_who_guideline_lower-back-pain_brochure_v7.pdf",
+    "notes": "Two-page quick reference listing intervention classes; used for in-app education cards."
+  },
+  {
+    "key": "nice_ng59_lbp_sciatica",
+    "type": "guideline",
+    "title": "Low back pain and sciatica in over 16s: assessment and management (NG59)",
+    "authors": "National Institute for Health and Care Excellence (NICE)",
+    "year": 2016,
+    "journal": "NICE Guideline (updated 2020; PDF accessible via NICE)",
+    "doi": "",
+    "url": "https://www.nice.org.uk/guidance/ng59/resources/low-back-pain-and-sciatica-in-over-16s-assessment-and-management-pdf-1837521693637",
+    "notes": "Key points used: self-management advice, encourage normal activity, exercise programs, cautious imaging approach."
+  },
+  {
+    "key": "acp2017_noninvasive_lbp",
+    "type": "guideline",
+    "title": "Noninvasive Treatments for Acute, Subacute, and Chronic Low Back Pain: A Clinical Practice Guideline from the American College of Physicians",
+    "authors": "Qaseem A, Wilt TJ, McLean RM, Forciea MA; Clinical Guidelines Committee of the American College of Physicians",
+    "year": 2017,
+    "journal": "Annals of Internal Medicine (ACP guideline PDF)",
+    "doi": "10.7326/M16-2367",
+    "url": "https://www.acponline.org/sites/default/files/acp-policy-library/guidelines/noninvasive_treatments_for_chronic_low_back_pain_2017.pdf",
+    "notes": "Key points: prioritize non-drug therapies; exercise, mind-body approaches for chronic LBP; superficial heat for acute/subacute; avoid unnecessary interventions."
+  },
+  {
+    "key": "jospt2021_lbp_cpg",
+    "type": "guideline",
+    "title": "Interventions for the Management of Acute and Chronic Low Back Pain: Revision 2021",
+    "authors": "George SZ, Fritz JM, Silfies SP, Schneider MJ, Beneciuk JM, Lentz TA, Gilliam JR, Hendren S, Norman KS",
+    "year": 2021,
+    "journal": "Journal of Orthopaedic & Sports Physical Therapy (Clinical Practice Guideline)",
+    "doi": "10.2519/jospt.2021.0304",
+    "url": "https://www.orthopt.org/uploads/content_files/files/jospt.2021.0304.pdf",
+    "notes": "PT-focused CPG; supports education and exercise categories (motor control / trunk coordination / general exercise), with decision-tree guidance."
+  },
+  {
+    "key": "aopt2021_lbp_decision_tree",
+    "type": "clinical_tool",
+    "title": "Low Back Pain Decision Tree (CPG Revision 2021)",
+    "authors": "Academy of Orthopaedic Physical Therapy (AOPT)",
+    "year": 2021,
+    "journal": "AOPT (PDF decision tree)",
+    "doi": "",
+    "url": "https://www.orthopt.org/uploads/content_files/files/FINAL_ALL_LBP_CPG_Revision_Decision_Tree_2021.pdf",
+    "notes": "Algorithmic summary of the 2021 CPG; used to inspire app’s screening and pathway logic (not diagnostic)."
+  },
+  {
+    "key": "massgeneral_lbp_mobility_deficits_protocol",
+    "type": "clinical_protocol",
+    "title": "Rehabilitation Protocol for Conservative Management of Low Back Pain With Mobility Deficits",
+    "authors": "Massachusetts General Brigham Sports Medicine",
+    "year": 2021,
+    "journal": "Clinical protocol PDF",
+    "doi": "",
+    "url": "https://www.massgeneral.org/assets/mgh/pdf/orthopaedics/sports-medicine/physical-therapy/rehabilitation-protocol-for-conservative-management-of-low-back-pain-with-mobility-deficits.pdf",
+    "notes": "Pragmatic phased rehab protocol; informs the app’s phase structure and common exercise choices."
+  },
+  {
+    "key": "cochrane_exercise_clbp",
+    "type": "systematic_review",
+    "title": "Exercise for treatment of chronic low back pain (Cochrane evidence)",
+    "authors": "Cochrane Musculoskeletal / Cochrane Evidence",
+    "year": 2021,
+    "journal": "Cochrane",
+    "doi": "10.1002/14651858.CD009790.pub2",
+    "url": "https://www.cochrane.org/evidence/CD009790_exercise-treatment-chronic-low-back-pain",
+    "notes": "Evidence summary that exercise can reduce pain and improve function in chronic LBP compared to minimal care; certainty varies."
+  },
+  {
+    "key": "aafp2022_exercise_clbp",
+    "type": "evidence_summary",
+    "title": "Cochrane for Clinicians: Is exercise effective for adults with chronic low back pain?",
+    "authors": "American Academy of Family Physicians",
+    "year": 2022,
+    "journal": "American Family Physician (PDF)",
+    "doi": "",
+    "url": "https://www.aafp.org/pubs/afp/issues/2022/1000/cochrane-low-back-pain.pdf",
+    "notes": "Clinician-friendly summary: exercise reduces pain and improves function vs usual care, especially short-term."
+  },
+  {
+    "key": "efort2023_motor_control_review",
+    "type": "systematic_review",
+    "title": "The effect and mechanism of motor control exercise on low back pain: a narrative review",
+    "authors": "Xu H-R, Zhang Y-H, Zheng Y-L",
+    "year": 2023,
+    "journal": "EFORT Open Reviews",
+    "doi": "10.1530/EOR-23-0057",
+    "url": "https://eor.bioscientifica.com/view/journals/eor/8/7/EOR-23-0057.xml",
+    "notes": "Open-access review discussing motor control/stabilisation exercise mechanisms and evidence; used for motor-control education cards."
+  },
+  {
+    "key": "plosone2020_yoga_clbp_meta",
+    "type": "meta_analysis",
+    "title": "Yoga compared to non-exercise or physical therapy exercise on pain and functional disability in chronic low back pain: A meta-analysis",
+    "authors": "Zhang Y, et al. (PLOS ONE)",
+    "year": 2020,
+    "journal": "PLOS ONE",
+    "doi": "10.1371/journal.pone.0238544",
+    "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0238544",
+    "notes": "Open-access meta-analysis; yoga may reduce pain short-to-intermediate term and improve disability vs non-exercise; certainty varies."
+  },
+  {
+    "key": "lancet2024_walkback_trial",
+    "type": "rct",
+    "title": "Effectiveness and cost-effectiveness of an individualised, progressive walking and education intervention for the prevention of low back pain recurrence in Australia (WalkBack): a randomised controlled trial",
+    "authors": "Pocovi N, et al.",
+    "year": 2024,
+    "journal": "The Lancet",
+    "doi": "",
+    "url": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736%2824%2900755-4/fulltext",
+    "notes": "Large RCT: walking + education reduced recurrence risk; informs the app’s walking progression module."
+  },
+  {
+    "key": "mayo_back_pain_when_to_see_doctor",
+    "type": "medical_reference",
+    "title": "Back pain: When to see a doctor",
+    "authors": "Mayo Clinic Staff",
+    "year": 2024,
+    "journal": "Mayo Clinic",
+    "doi": "",
+    "url": "https://www.mayoclinic.org/symptoms/back-pain/basics/when-to-see-doctor/sym-20050878",
+    "notes": "Used to define safety red flags: bowel/bladder issues, fever, severe night pain, weakness/numbness, etc."
+  },
+  {
+    "key": "nhs_ces_warning_leaflet",
+    "type": "medical_reference",
+    "title": "Cauda Equina Syndrome – Important Warning Signs (patient leaflet)",
+    "authors": "NHS Scotland / Right Decisions",
+    "year": 2024,
+    "journal": "NHS PDF",
+    "doi": "",
+    "url": "https://www.rightdecisions.scot.nhs.uk/media/k0ujnxtt/ces-patient-info-leaflet.pdf",
+    "notes": "Used for the app’s cauda equina red-flag education and safety gate."
+  }
+]
