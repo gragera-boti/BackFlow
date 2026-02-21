@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 import Charts
 
-struct ProgressView: View {
+struct ProgressTrackingView: View {
     @Query(sort: \Session.date) private var sessions: [Session]
     @Query(sort: \SymptomLog.timestamp) private var symptomLogs: [SymptomLog]
     @Query(sort: \WalkingLog.date) private var walkingLogs: [WalkingLog]
@@ -310,6 +310,11 @@ struct StatCard: View {
 }
 
 #Preview {
-    ProgressView()
-        .modelContainer(for: [Session.self, SymptomLog.self, WalkingLog.self], inMemory: true)
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(
+        for: Session.self, SymptomLog.self, WalkingLog.self,
+        configurations: config
+    )
+    return ProgressTrackingView()
+        .modelContainer(container)
 }

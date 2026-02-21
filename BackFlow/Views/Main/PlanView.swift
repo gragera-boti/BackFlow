@@ -146,10 +146,13 @@ struct UpcomingSessionsSection: View {
         var dates: [Date] = []
         
         for weekday in plan.weekdays.sorted() {
+            var components = DateComponents()
+            components.weekday = weekday + 1
             if let date = calendar.nextDate(
                 after: Date(),
-                matching: DateComponents(weekday: weekday + 1),
-                matchingPolicy: .nextTime
+                matching: components,
+                matchingPolicy: .nextTime,
+                direction: .forward
             ) {
                 dates.append(date)
             }

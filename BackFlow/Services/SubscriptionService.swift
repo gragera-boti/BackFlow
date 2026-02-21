@@ -25,10 +25,6 @@ class SubscriptionService {
         }
     }
     
-    deinit {
-        updateListenerTask?.cancel()
-    }
-    
     func loadProducts() async {
         do {
             products = try await Product.products(for: productIdentifiers)

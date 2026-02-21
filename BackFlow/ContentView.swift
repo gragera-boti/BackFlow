@@ -40,7 +40,7 @@ struct MainTabView: View {
                 }
                 .tag(1)
             
-            ProgressView()
+            ProgressTrackingView()
                 .tabItem {
                     Label("Progress", systemImage: "chart.line.uptrend.xyaxis")
                 }
@@ -56,10 +56,11 @@ struct MainTabView: View {
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: [
-            UserProfile.self,
-            Exercise.self,
-            Session.self
-        ], inMemory: true)
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(
+        for: UserProfile.self, Exercise.self, Session.self,
+        configurations: config
+    )
+    return ContentView()
+        .modelContainer(container)
 }
