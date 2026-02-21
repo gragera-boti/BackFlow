@@ -26,10 +26,9 @@ targets:
           - "*.xcassets"
     
     resources:
-      - path: SeedData
+      - path: BackFlow/SeedData
         type: folder
       - path: BackFlow/Assets.xcassets
-        type: folder
     
     info:
       path: Info.plist

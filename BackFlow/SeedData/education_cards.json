@@ -1,0 +1,83 @@
+[
+  {
+    "id": "edu_lbp_basics",
+    "title": "Low back pain basics (what most guidelines agree on)",
+    "summary": "Most low back pain episodes improve over time. Key strategies include education, staying active, and an exercise program that you can stick with.",
+    "detail_md": "## Key idea\nLow back pain is extremely common. Most cases are **non-specific** (no single identifiable tissue source) and often improve.\n\n## What helps most\n- **Advice & education** tailored to you\n- **Continue normal activities** as tolerated (avoid prolonged bed rest)\n- **Exercise** (general, motor control, strengthening, aerobic, or mind–body) chosen to fit you\n\n## In this app\nYou’ll follow a simple plan and track how your symptoms respond over 24 hours to guide progression.",
+    "refs": [
+      "nice_ng59_lbp_sciatica",
+      "acp2017_noninvasive_lbp",
+      "who2023_cplbp_guideline"
+    ]
+  },
+  {
+    "id": "edu_stay_active",
+    "title": "Stay active (the goal is to keep moving safely)",
+    "summary": "Guidelines consistently encourage staying active and returning to normal activities as soon as possible, with symptom-limited pacing.",
+    "detail_md": "## Why it matters\nAvoiding all activity can reduce confidence and decondition muscles. Most guidance encourages **continuing normal activities** and gradually rebuilding capacity.\n\n## Practical rule\nChoose activities you can do **without a big symptom spike** during, after, or the next day. If you flare, reduce and rebuild.\n\n## Walking counts\nWalking is often a safe starting point and can be progressed over time.",
+    "refs": [
+      "nice_ng59_lbp_sciatica",
+      "acp2017_noninvasive_lbp",
+      "lancet2024_walkback_trial"
+    ]
+  },
+  {
+    "id": "edu_imaging",
+    "title": "Do I need an MRI? (often: no, unless it changes care)",
+    "summary": "Many guidelines advise against routine imaging for low back pain unless there are red flags or results would change management.",
+    "detail_md": "## Imaging basics\nImaging can show age-related changes even in people without pain. That can be confusing.\n\n## Guideline principle\nImaging is generally considered in specialist settings **only if results are likely to change management**.\n\n## In this app\nIf you report red flags, we stop the plan and encourage urgent assessment.",
+    "refs": [
+      "nice_ng59_lbp_sciatica"
+    ]
+  },
+  {
+    "id": "edu_exercise_is_medicine",
+    "title": "Exercise therapy helps (but the “best” exercise is the one you’ll do)",
+    "summary": "Evidence suggests exercise can reduce pain and improve function in chronic low back pain. Different exercise types can work; consistency matters.",
+    "detail_md": "## Evidence summary\nSystematic reviews suggest **exercise can reduce pain and improve disability** compared with minimal care, though effects vary and certainty is not perfect.\n\n## What counts as exercise\n- Walking/aerobic\n- Strengthening\n- Motor control/stabilisation\n- Mind–body (yoga/tai chi)\n\n## The app strategy\nStart small, pick a plan you can adhere to, and progress conservatively.",
+    "refs": [
+      "cochrane_exercise_clbp",
+      "aafp2022_exercise_clbp",
+      "who2023_cplbp_guideline"
+    ]
+  },
+  {
+    "id": "edu_motor_control",
+    "title": "Motor control exercises (what are they?)",
+    "summary": "Motor control exercises train the timing and endurance of trunk muscles to support comfortable movement and confidence.",
+    "detail_md": "## Examples\nDead bug, bird dog, side plank variations.\n\n## Why they’re used\nMany rehab approaches include trunk coordination/stabilisation exercises as part of an overall exercise program.\n\n## In this app\nWe start with easy variations and only progress when your 24-hour response is stable.",
+    "refs": [
+      "jospt2021_lbp_cpg",
+      "efort2023_motor_control_review"
+    ]
+  },
+  {
+    "id": "edu_pain_monitoring",
+    "title": "Pain monitoring (how we decide to progress)",
+    "summary": "Your pain response over 24 hours is the key signal. The goal is gradual progress without big flare-ups.",
+    "detail_md": "## The 24-hour check\nAfter a session, you’ll log pain, and the next day you’ll be prompted to log next-day symptoms.\n\n## Default threshold\nThis app defaults to a conservative threshold (e.g., **≤3/10** during or after exercise *and* back to baseline the next day). You can personalise this (Premium) with warnings.\n\n## Important\nSevere or worsening neurological symptoms are not normal exercise soreness—use the safety screen.",
+    "refs": [
+      "who2023_cplbp_guideline",
+      "jospt2021_lbp_cpg"
+    ]
+  },
+  {
+    "id": "edu_walking_recurrence",
+    "title": "Walking to reduce recurrence (simple, scalable)",
+    "summary": "A large randomized trial found an individualized walking + education program reduced recurrence risk of activity-limiting low back pain.",
+    "detail_md": "## What the trial tested\nA progressive walking plan + education delivered over months.\n\n## What this app does\nWe provide a simplified progressive walking target and track flare patterns.\n\n## Safety\nProgress gradually; if symptoms spike, scale back.",
+    "refs": [
+      "lancet2024_walkback_trial"
+    ]
+  },
+  {
+    "id": "edu_red_flags",
+    "title": "Red flags: when to seek urgent care",
+    "summary": "Certain symptoms require urgent medical assessment. Apps are not appropriate for emergencies.",
+    "detail_md": "## Seek urgent care if you have\n- New bowel or bladder control problems\n- Numbness in the saddle area (inner thighs/genitals)\n- Severe or progressive weakness, or legs giving way\n- Fever with severe back pain\n- Severe night pain or unexplained weight loss\n- Major trauma or suspected fracture\n\n## In this app\nIf you report these, we show **Stop & Seek Care** and pause the plan.",
+    "refs": [
+      "nhs_ces_warning_leaflet",
+      "mayo_back_pain_when_to_see_doctor"
+    ]
+  }
+]

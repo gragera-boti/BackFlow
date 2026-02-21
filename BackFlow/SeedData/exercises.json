@@ -1,0 +1,745 @@
+[
+  {
+    "slug": "breathing-90-90",
+    "name": "90/90 Diaphragmatic Breathing",
+    "category": "self-care",
+    "region": [
+      "core",
+      "ribcage",
+      "nervous-system"
+    ],
+    "equipment": [
+      "wall_optional",
+      "pillow_optional"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 60,
+    "sets_default": 3,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 30,
+    "primary_cues": [
+      "Breathe slowly through the nose if comfortable; exhale fully without straining.",
+      "Let the belly and lower ribs expand gently; keep shoulders relaxed.",
+      "If dizziness occurs, stop and return to normal breathing."
+    ],
+    "common_mistakes": [
+      "Forcing big breaths or bracing hard",
+      "Shrugging shoulders / neck tension"
+    ],
+    "progressions": [
+      "Increase duration to 2 minutes per set",
+      "Pair exhale with a gentle pelvic tilt (if comfortable)"
+    ],
+    "regressions": [
+      "Shorter sets (30s)",
+      "Breathe at your normal pace"
+    ],
+    "dosage_notes": "Breathing and relaxation are supportive tools to reduce guarding and build confidence in movement (adjunct, not a cure).",
+    "range_of_motion_notes": "No forced spinal movement; keep it comfortable.",
+    "evidence_refs": [
+      "who2023_cplbp_guideline",
+      "acp2017_noninvasive_lbp"
+    ],
+    "illustration": "exercise_breathing-90-90.svg"
+  },
+  {
+    "slug": "pelvic-tilt-supine",
+    "name": "Pelvic Tilt (Supine)",
+    "category": "mobility",
+    "region": [
+      "lumbar",
+      "core"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": null,
+    "sets_default": 2,
+    "reps_default": 10,
+    "hold_sec_default": 2,
+    "rest_sec_default": 30,
+    "primary_cues": [
+      "Gently tip the pelvis to flatten the low back toward the floor, then return to neutral.",
+      "Keep the movement small and smooth—this is not a maximal ab exercise."
+    ],
+    "common_mistakes": [
+      "Pushing into pain or cramping",
+      "Holding breath"
+    ],
+    "progressions": [
+      "Increase to 3 sets of 12–15",
+      "Add exhale on tilt"
+    ],
+    "regressions": [
+      "Smaller range",
+      "Fewer reps"
+    ],
+    "dosage_notes": "A gentle motion to reduce stiffness and introduce controlled lumbar movement.",
+    "range_of_motion_notes": "Small pain-free motion only.",
+    "evidence_refs": [
+      "massgeneral_lbp_mobility_deficits_protocol",
+      "jospt2021_lbp_cpg"
+    ],
+    "illustration": "exercise_pelvic-tilt-supine.svg"
+  },
+  {
+    "slug": "cat-camel",
+    "name": "Cat-Camel (Spinal Mobility)",
+    "category": "mobility",
+    "region": [
+      "thoracic",
+      "lumbar"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": null,
+    "sets_default": 2,
+    "reps_default": 8,
+    "hold_sec_default": 2,
+    "rest_sec_default": 30,
+    "primary_cues": [
+      "Move slowly between rounding and arching your back—stay in a comfortable range.",
+      "Let the head and tailbone follow the movement; avoid forcing end ranges."
+    ],
+    "common_mistakes": [
+      "Moving too fast",
+      "Forcing deep arch/round and triggering sharp pain"
+    ],
+    "progressions": [
+      "Increase to 10–12 reps",
+      "Pause 3–4 seconds at each end if comfortable"
+    ],
+    "regressions": [
+      "Smaller range of motion",
+      "Do in standing with hands on a table (less load)"
+    ],
+    "dosage_notes": "Common gentle mobility drill used in early phases; prioritize symptom-limited movement.",
+    "range_of_motion_notes": "Avoid end-range forcing.",
+    "evidence_refs": [
+      "massgeneral_lbp_mobility_deficits_protocol"
+    ],
+    "illustration": "exercise_cat-camel.svg"
+  },
+  {
+    "slug": "prone-on-elbows",
+    "name": "Prone on Elbows (Gentle Extension)",
+    "category": "mobility",
+    "region": [
+      "lumbar"
+    ],
+    "equipment": [
+      "mat"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 45,
+    "sets_default": 3,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 30,
+    "primary_cues": [
+      "Rest on forearms and let the low back gently extend if it feels good.",
+      "Stop if symptoms worsen, especially if leg symptoms increase."
+    ],
+    "common_mistakes": [
+      "Pushing aggressively into end range",
+      "Holding breath or clenching glutes hard"
+    ],
+    "progressions": [
+      "Increase hold to 60–90s if comfortable",
+      "Progress to press-ups only if tolerated"
+    ],
+    "regressions": [
+      "Shorter hold",
+      "Use pillows under chest for smaller extension"
+    ],
+    "dosage_notes": "Some people find gentle extension positions relieving; it is optional and must be symptom-guided.",
+    "range_of_motion_notes": "Gentle extension only; avoid if it clearly aggravates symptoms.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg"
+    ],
+    "illustration": "exercise_prone-on-elbows.svg"
+  },
+  {
+    "slug": "knee-to-chest-single",
+    "name": "Single Knee-to-Chest (Gentle Flexion)",
+    "category": "mobility",
+    "region": [
+      "lumbar",
+      "hips"
+    ],
+    "equipment": [
+      "mat"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 30,
+    "sets_default": 2,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 20,
+    "primary_cues": [
+      "Bring one knee toward the chest gently; keep the other leg relaxed.",
+      "You should feel a mild stretch, not sharp pain."
+    ],
+    "common_mistakes": [
+      "Pulling hard into pain",
+      "Tensing shoulders and neck"
+    ],
+    "progressions": [
+      "Increase hold to 45–60s",
+      "Try double knee-to-chest only if comfortable"
+    ],
+    "regressions": [
+      "Smaller range",
+      "Shorter hold"
+    ],
+    "dosage_notes": "Optional mobility drill; choose only if it feels relieving and does not flare symptoms.",
+    "range_of_motion_notes": "Gentle flexion; avoid forcing.",
+    "evidence_refs": [
+      "massgeneral_lbp_mobility_deficits_protocol"
+    ],
+    "illustration": "exercise_knee-to-chest-single.svg"
+  },
+  {
+    "slug": "open-book-thoracic-rotation",
+    "name": "Open Book (Thoracic Rotation)",
+    "category": "mobility",
+    "region": [
+      "thoracic",
+      "ribcage"
+    ],
+    "equipment": [
+      "mat"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": null,
+    "sets_default": 2,
+    "reps_default": 8,
+    "hold_sec_default": 2,
+    "rest_sec_default": 30,
+    "primary_cues": [
+      "Keep knees stacked; rotate through the upper back and ribs.",
+      "Move slowly; breathe into the opening."
+    ],
+    "common_mistakes": [
+      "Letting knees drift apart and twisting low back",
+      "Rushing through reps"
+    ],
+    "progressions": [
+      "Increase hold to 3–5s at end range",
+      "Add a pillow between knees for comfort"
+    ],
+    "regressions": [
+      "Smaller rotation",
+      "Hands slide only partially open"
+    ],
+    "dosage_notes": "Helpful for people who feel stiff in the upper back; can reduce perceived back tightness.",
+    "range_of_motion_notes": "Keep low back calm; rotate gently.",
+    "evidence_refs": [
+      "massgeneral_lbp_mobility_deficits_protocol"
+    ],
+    "illustration": "exercise_open-book-thoracic-rotation.svg"
+  },
+  {
+    "slug": "hip-flexor-stretch-half-kneel",
+    "name": "Hip Flexor Stretch (Half-Kneeling)",
+    "category": "mobility",
+    "region": [
+      "hips"
+    ],
+    "equipment": [
+      "mat_optional"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 45,
+    "sets_default": 2,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 20,
+    "primary_cues": [
+      "Tuck pelvis slightly and squeeze the glute on the back leg.",
+      "Keep torso tall; avoid arching the low back."
+    ],
+    "common_mistakes": [
+      "Leaning forward without pelvis control",
+      "Over-arching lumbar spine"
+    ],
+    "progressions": [
+      "Add overhead reach and slight side bend"
+    ],
+    "regressions": [
+      "Do in standing split stance",
+      "Shorter holds"
+    ],
+    "dosage_notes": "Adjunct mobility. Not essential for everyone; prioritize the movements that help you move comfortably.",
+    "range_of_motion_notes": "Gentle stretch only.",
+    "evidence_refs": [
+      "massgeneral_lbp_mobility_deficits_protocol",
+      "jospt2021_lbp_cpg"
+    ],
+    "illustration": "exercise_hip-flexor-stretch-half-kneel.svg"
+  },
+  {
+    "slug": "hamstring-stretch-supine-strap",
+    "name": "Hamstring Stretch (Supine, Strap)",
+    "category": "mobility",
+    "region": [
+      "hips",
+      "hamstrings"
+    ],
+    "equipment": [
+      "strap_optional"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 45,
+    "sets_default": 2,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 20,
+    "primary_cues": [
+      "Keep knee slightly bent if needed; lift leg until a mild stretch.",
+      "Avoid aggressive pulling that reproduces sharp leg symptoms."
+    ],
+    "common_mistakes": [
+      "Forcing end range",
+      "Locking knee and irritating nerves"
+    ],
+    "progressions": [
+      "Longer hold (60s)",
+      "Slow active pulses (very small) if tolerated"
+    ],
+    "regressions": [
+      "Bend the knee more",
+      "Lower the leg angle"
+    ],
+    "dosage_notes": "Optional stretch. If symptoms feel nerve-like (burning/tingling), reduce intensity and consider clinician review.",
+    "range_of_motion_notes": "Gentle stretch; stop if leg symptoms worsen.",
+    "evidence_refs": [
+      "massgeneral_lbp_mobility_deficits_protocol"
+    ],
+    "illustration": "exercise_hamstring-stretch-supine-strap.svg"
+  },
+  {
+    "slug": "glute-bridge",
+    "name": "Glute Bridge",
+    "category": "strength",
+    "region": [
+      "hips",
+      "glutes",
+      "core"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": null,
+    "sets_default": 3,
+    "reps_default": 10,
+    "hold_sec_default": 2,
+    "rest_sec_default": 45,
+    "primary_cues": [
+      "Press through heels; lift hips until you feel glutes working.",
+      "Keep ribs down and avoid over-arching the low back."
+    ],
+    "common_mistakes": [
+      "Pushing from the low back",
+      "Knees collapsing inward"
+    ],
+    "progressions": [
+      "Increase reps to 12–15",
+      "Single-leg bridge (only if stable and pain-free)",
+      "Add mini-band above knees"
+    ],
+    "regressions": [
+      "Smaller range (half bridge)",
+      "Isometric holds instead of reps"
+    ],
+    "dosage_notes": "Hip strengthening can reduce load sensitivity and improves overall trunk-hip coordination.",
+    "range_of_motion_notes": "Pain-free range; avoid end-range lumbar extension.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg",
+      "massgeneral_lbp_mobility_deficits_protocol"
+    ],
+    "illustration": "exercise_glute-bridge.svg"
+  },
+  {
+    "slug": "dead-bug",
+    "name": "Dead Bug (Core Control)",
+    "category": "strength",
+    "region": [
+      "core",
+      "lumbar"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "medium",
+    "time_per_set_sec": null,
+    "sets_default": 3,
+    "reps_default": 8,
+    "hold_sec_default": 2,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Keep ribs down and low back gently supported (neutral).",
+      "Move slowly; stop before you lose control or arch.",
+      "Exhale as you extend a limb."
+    ],
+    "common_mistakes": [
+      "Arching the low back",
+      "Rushing or holding breath"
+    ],
+    "progressions": [
+      "Increase reps to 10–12",
+      "Extend both limbs (harder) only if stable",
+      "Add light band resistance"
+    ],
+    "regressions": [
+      "Move one arm only",
+      "Shorter limb range"
+    ],
+    "dosage_notes": "Motor control / stabilisation exercises are commonly recommended as part of exercise therapy for LBP.",
+    "range_of_motion_notes": "Keep spine neutral; small controlled motion.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg",
+      "efort2023_motor_control_review"
+    ],
+    "illustration": "exercise_dead-bug.svg"
+  },
+  {
+    "slug": "bird-dog",
+    "name": "Bird Dog",
+    "category": "strength",
+    "region": [
+      "core",
+      "hips",
+      "lumbar"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "medium",
+    "time_per_set_sec": null,
+    "sets_default": 3,
+    "reps_default": 8,
+    "hold_sec_default": 3,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Keep hips level; reach long rather than high.",
+      "Brace gently; avoid rotation or sagging."
+    ],
+    "common_mistakes": [
+      "Twisting the torso",
+      "Over-extending the low back"
+    ],
+    "progressions": [
+      "Longer holds (5–8s)",
+      "Add a small pause at end range",
+      "Add knee-to-elbow return (advanced, optional)"
+    ],
+    "regressions": [
+      "Arms only or legs only",
+      "Shorter reach"
+    ],
+    "dosage_notes": "Classic trunk coordination exercise for endurance and control.",
+    "range_of_motion_notes": "Neutral spine. Avoid over-arching.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg",
+      "efort2023_motor_control_review"
+    ],
+    "illustration": "exercise_bird-dog.svg"
+  },
+  {
+    "slug": "side-plank-modified",
+    "name": "Side Plank (Modified Knees)",
+    "category": "strength",
+    "region": [
+      "core",
+      "obliques",
+      "hips"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "medium",
+    "time_per_set_sec": 20,
+    "sets_default": 3,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Lift hips into a straight line from shoulders to knees.",
+      "Keep neck long; shoulder stacked over elbow."
+    ],
+    "common_mistakes": [
+      "Shoulder shrugging",
+      "Hips dropping or twisting forward"
+    ],
+    "progressions": [
+      "Increase hold to 30–45s",
+      "Full side plank (feet) if strong and pain-free"
+    ],
+    "regressions": [
+      "Shorter holds (10–15s)",
+      "Keep top hand on floor for balance"
+    ],
+    "dosage_notes": "Endurance-focused trunk exercise (anti-lateral flexion).",
+    "range_of_motion_notes": "Isometric; stop if shoulder pain dominates.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg",
+      "efort2023_motor_control_review"
+    ],
+    "illustration": "exercise_side-plank-modified.svg"
+  },
+  {
+    "slug": "pallof-press",
+    "name": "Pallof Press (Anti-Rotation)",
+    "category": "strength",
+    "region": [
+      "core",
+      "hips"
+    ],
+    "equipment": [
+      "band"
+    ],
+    "difficulty": "medium",
+    "time_per_set_sec": null,
+    "sets_default": 3,
+    "reps_default": 10,
+    "hold_sec_default": 2,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Stand tall; press band straight out and resist rotation.",
+      "Keep ribs down; avoid twisting through the torso."
+    ],
+    "common_mistakes": [
+      "Rotating toward the band",
+      "Leaning back"
+    ],
+    "progressions": [
+      "Stronger band",
+      "Half-kneeling or split-stance position"
+    ],
+    "regressions": [
+      "Lighter band",
+      "Shorter press range"
+    ],
+    "dosage_notes": "Strengthens trunk control in functional standing positions.",
+    "range_of_motion_notes": "Neutral spine; no forced range.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg"
+    ],
+    "illustration": "exercise_pallof-press.svg"
+  },
+  {
+    "slug": "hip-hinge-dowel",
+    "name": "Hip Hinge Drill (Dowel / Hands-on Hips)",
+    "category": "skill",
+    "region": [
+      "hips",
+      "lumbar",
+      "movement-pattern"
+    ],
+    "equipment": [
+      "dowel_optional"
+    ],
+    "difficulty": "medium",
+    "time_per_set_sec": null,
+    "sets_default": 3,
+    "reps_default": 8,
+    "hold_sec_default": 2,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Send hips back while keeping spine long and neutral.",
+      "Bend knees slightly; feel load in hips/glutes, not the low back."
+    ],
+    "common_mistakes": [
+      "Rounding the back",
+      "Turning it into a squat (knees forward) unintentionally"
+    ],
+    "progressions": [
+      "Add light load (backpack) once pattern is solid",
+      "Increase reps to 10–12"
+    ],
+    "regressions": [
+      "Reduce range (hinge to a wall target)",
+      "Hands slide along thighs to guide motion"
+    ],
+    "dosage_notes": "Movement retraining can improve confidence and reduce load spikes during daily lifting tasks.",
+    "range_of_motion_notes": "Pain-free pattern only.",
+    "evidence_refs": [
+      "jospt2021_lbp_cpg",
+      "massgeneral_lbp_mobility_deficits_protocol"
+    ],
+    "illustration": "exercise_hip-hinge-dowel.svg"
+  },
+  {
+    "slug": "sit-to-stand",
+    "name": "Sit-to-Stand (Chair)",
+    "category": "strength",
+    "region": [
+      "legs",
+      "hips",
+      "functional"
+    ],
+    "equipment": [
+      "chair"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": null,
+    "sets_default": 3,
+    "reps_default": 10,
+    "hold_sec_default": null,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Lean slightly forward, push through feet, stand tall.",
+      "Control the way down; keep breathing."
+    ],
+    "common_mistakes": [
+      "Dropping quickly into chair",
+      "Knees collapsing inward"
+    ],
+    "progressions": [
+      "Lower chair height",
+      "Add load (backpack)",
+      "Pause 2s hovering above chair"
+    ],
+    "regressions": [
+      "Use hands on armrests",
+      "Higher chair"
+    ],
+    "dosage_notes": "Functional leg/hip strength supports spine load tolerance in daily life.",
+    "range_of_motion_notes": "Use pain-free range; adjust chair height.",
+    "evidence_refs": [
+      "who2023_cplbp_guideline",
+      "jospt2021_lbp_cpg"
+    ],
+    "illustration": "exercise_sit-to-stand.svg"
+  },
+  {
+    "slug": "farmer-carry",
+    "name": "Farmer Carry (Light Load)",
+    "category": "strength",
+    "region": [
+      "core",
+      "grip",
+      "functional"
+    ],
+    "equipment": [
+      "dumbbell_optional",
+      "bags_optional"
+    ],
+    "difficulty": "medium",
+    "time_per_set_sec": 60,
+    "sets_default": 3,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": 60,
+    "primary_cues": [
+      "Stand tall; ribs down; walk slowly with controlled steps.",
+      "Choose a load that feels stable and does not spike symptoms."
+    ],
+    "common_mistakes": [
+      "Leaning to one side",
+      "Using a load that’s too heavy and bracing excessively"
+    ],
+    "progressions": [
+      "Increase time to 75–90s",
+      "Slightly increase load (small increments)"
+    ],
+    "regressions": [
+      "Shorter carries (20–30s)",
+      "Lighter load",
+      "March in place"
+    ],
+    "dosage_notes": "Loaded carries are a practical strength/endurance option once baseline tolerance is established.",
+    "range_of_motion_notes": "Neutral spine; avoid rushing.",
+    "evidence_refs": [
+      "who2023_cplbp_guideline",
+      "jospt2021_lbp_cpg"
+    ],
+    "illustration": "exercise_farmer-carry.svg"
+  },
+  {
+    "slug": "walking-progression",
+    "name": "Walking (Progressive Plan)",
+    "category": "aerobic",
+    "region": [
+      "whole-body"
+    ],
+    "equipment": [
+      "none"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 600,
+    "sets_default": 1,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": null,
+    "primary_cues": [
+      "Start with a duration that feels manageable and build gradually.",
+      "If a walk increases symptoms beyond your threshold or causes next-day flare, reduce and rebuild."
+    ],
+    "common_mistakes": [
+      "Jumping from zero to long walks immediately",
+      "Ignoring next-day flare patterns"
+    ],
+    "progressions": [
+      "Increase total minutes per week gradually",
+      "Aim toward 30 minutes most days (as tolerated)"
+    ],
+    "regressions": [
+      "Shorter walks (5–10 min)",
+      "Split into multiple short walks"
+    ],
+    "dosage_notes": "Walking is low-cost and accessible; a walking + education program reduced recurrence risk in a large RCT (WalkBack).",
+    "range_of_motion_notes": "N/A",
+    "evidence_refs": [
+      "lancet2024_walkback_trial",
+      "who2023_cplbp_guideline"
+    ],
+    "illustration": "exercise_walking-progression.svg"
+  },
+  {
+    "slug": "yoga-gentle-flow",
+    "name": "Gentle Yoga Flow (Optional)",
+    "category": "mind-body",
+    "region": [
+      "whole-body"
+    ],
+    "equipment": [
+      "mat"
+    ],
+    "difficulty": "easy",
+    "time_per_set_sec": 600,
+    "sets_default": 1,
+    "reps_default": null,
+    "hold_sec_default": null,
+    "rest_sec_default": null,
+    "primary_cues": [
+      "Move slowly and stay within comfortable ranges.",
+      "Skip any pose that increases symptoms sharply."
+    ],
+    "common_mistakes": [
+      "Pushing into end ranges to “stretch it out”",
+      "Copying advanced poses"
+    ],
+    "progressions": [
+      "Increase total time gradually",
+      "Add breathing focus"
+    ],
+    "regressions": [
+      "Shorter flow (5 min)",
+      "Fewer poses"
+    ],
+    "dosage_notes": "Mind–body exercise (e.g., yoga) can be an option for some people with chronic low back pain; evidence certainty varies.",
+    "range_of_motion_notes": "Avoid forced end-range lumbar flexion/extension if irritable.",
+    "evidence_refs": [
+      "plosone2020_yoga_clbp_meta",
+      "acp2017_noninvasive_lbp"
+    ],
+    "illustration": "exercise_yoga-gentle-flow.svg"
+  }
+]

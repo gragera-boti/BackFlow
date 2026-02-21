@@ -1,0 +1,323 @@
+{
+  "program_id": "lbp_resilience_10w",
+  "name": "Low Back Resilience — 10-week Plan (Non-specific LBP)",
+  "target_condition": "Chronic or recurrent non-specific low back pain (wellness, non-diagnostic)",
+  "phases": [
+    {
+      "phase_id": "phase0_reset",
+      "name": "Phase 0 — Reset & confidence (Weeks 0–2)",
+      "goals": [
+        "Reduce fear/guarding and restore comfortable movement",
+        "Establish a daily habit (short sessions)",
+        "Begin gentle walking progression"
+      ],
+      "exit_criteria": [
+        "Two consecutive sessions without next-day flare above threshold",
+        "User reports improved confidence to move",
+        "Red-flag screen remains negative"
+      ],
+      "sessions_per_week": 4,
+      "session_templates": [
+        {
+          "template_id": "p0_session_a",
+          "name": "Mobility + Calm (10–15 min)",
+          "exercises": [
+            {
+              "slug": "breathing-90-90",
+              "sets": 3,
+              "duration_sec": 60
+            },
+            {
+              "slug": "pelvic-tilt-supine",
+              "sets": 2,
+              "reps": 10
+            },
+            {
+              "slug": "cat-camel",
+              "sets": 2,
+              "reps": 8
+            },
+            {
+              "slug": "walking-progression",
+              "sets": 1,
+              "duration_sec": 600
+            }
+          ],
+          "education": [
+            "edu_lbp_basics",
+            "edu_red_flags"
+          ]
+        },
+        {
+          "template_id": "p0_session_b",
+          "name": "Foundation (10–15 min)",
+          "exercises": [
+            {
+              "slug": "open-book-thoracic-rotation",
+              "sets": 2,
+              "reps": 8
+            },
+            {
+              "slug": "hip-flexor-stretch-half-kneel",
+              "sets": 2,
+              "hold_sec": 45
+            },
+            {
+              "slug": "glute-bridge",
+              "sets": 3,
+              "reps": 10
+            },
+            {
+              "slug": "dead-bug",
+              "sets": 2,
+              "reps": 8
+            }
+          ],
+          "education": [
+            "edu_stay_active",
+            "edu_pain_monitoring"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "phase1_control",
+      "name": "Phase 1 — Control & capacity (Weeks 2–6)",
+      "goals": [
+        "Build trunk endurance and coordination",
+        "Increase tolerance to daily tasks (sitting, bending, lifting light loads)",
+        "Continue walking habit"
+      ],
+      "exit_criteria": [
+        "Can complete motor control sessions with stable 24-hour response",
+        "Function trend improving (user-defined tasks)",
+        "Walking target met in 3 of last 4 weeks"
+      ],
+      "sessions_per_week": 3,
+      "session_templates": [
+        {
+          "template_id": "p1_session_strength",
+          "name": "Motor Control + Strength (20–25 min)",
+          "exercises": [
+            {
+              "slug": "dead-bug",
+              "sets": 3,
+              "reps": 8
+            },
+            {
+              "slug": "bird-dog",
+              "sets": 3,
+              "reps": 8,
+              "hold_sec": 3
+            },
+            {
+              "slug": "side-plank-modified",
+              "sets": 3,
+              "duration_sec": 20
+            },
+            {
+              "slug": "glute-bridge",
+              "sets": 3,
+              "reps": 12
+            },
+            {
+              "slug": "walking-progression",
+              "sets": 1,
+              "duration_sec": 900
+            }
+          ],
+          "education": [
+            "edu_motor_control",
+            "edu_exercise_is_medicine"
+          ]
+        },
+        {
+          "template_id": "p1_session_mobility",
+          "name": "Mobility + Patterning (15–20 min)",
+          "exercises": [
+            {
+              "slug": "cat-camel",
+              "sets": 2,
+              "reps": 10
+            },
+            {
+              "slug": "open-book-thoracic-rotation",
+              "sets": 2,
+              "reps": 8
+            },
+            {
+              "slug": "hamstring-stretch-supine-strap",
+              "sets": 2,
+              "hold_sec": 45
+            },
+            {
+              "slug": "hip-hinge-dowel",
+              "sets": 3,
+              "reps": 8
+            }
+          ],
+          "education": [
+            "edu_imaging"
+          ]
+        }
+      ]
+    },
+    {
+      "phase_id": "phase2_resilience",
+      "name": "Phase 2 — Strength & resilience (Weeks 6–10)",
+      "goals": [
+        "Progress functional strength and confidence",
+        "Build recurrence-prevention habits (walking + strength)",
+        "Prepare for return to gym/lifting if desired (optional)"
+      ],
+      "exit_criteria": [
+        "Stable symptoms and clear self-management strategy",
+        "User can maintain 2–3 sessions/week",
+        "Walking ≥ 25–30 min most days (if desired) with stable response"
+      ],
+      "sessions_per_week": 3,
+      "session_templates": [
+        {
+          "template_id": "p2_session_strength",
+          "name": "Strength Day (25–30 min)",
+          "exercises": [
+            {
+              "slug": "sit-to-stand",
+              "sets": 3,
+              "reps": 10
+            },
+            {
+              "slug": "hip-hinge-dowel",
+              "sets": 3,
+              "reps": 10
+            },
+            {
+              "slug": "pallof-press",
+              "sets": 3,
+              "reps": 10,
+              "hold_sec": 2
+            },
+            {
+              "slug": "farmer-carry",
+              "sets": 3,
+              "duration_sec": 60
+            }
+          ],
+          "education": [
+            "edu_walking_recurrence"
+          ]
+        },
+        {
+          "template_id": "p2_session_mind_body",
+          "name": "Mind–Body (Optional) (10–15 min)",
+          "exercises": [
+            {
+              "slug": "breathing-90-90",
+              "sets": 2,
+              "duration_sec": 60
+            },
+            {
+              "slug": "yoga-gentle-flow",
+              "sets": 1,
+              "duration_sec": 600
+            }
+          ],
+          "education": [
+            "edu_exercise_is_medicine"
+          ]
+        }
+      ]
+    }
+  ],
+  "activity_ladder": [
+    {
+      "level": 1,
+      "name": "Keep moving gently",
+      "description": "Short walks + gentle mobility. Focus on calm breathing and reducing fear/guarding."
+    },
+    {
+      "level": 2,
+      "name": "Build a walking routine",
+      "description": "Progress walking minutes/week. Keep symptoms stable using the 24-hour rule."
+    },
+    {
+      "level": 3,
+      "name": "Core control basics",
+      "description": "Add motor control exercises (dead bug/bird dog/side plank) in low volumes."
+    },
+    {
+      "level": 4,
+      "name": "Strength foundations",
+      "description": "Add functional strength (sit-to-stand, hinge drill, band anti-rotation)."
+    },
+    {
+      "level": 5,
+      "name": "Resilience loading",
+      "description": "Progress to light loaded carries and higher volume strength as tolerated."
+    },
+    {
+      "level": 6,
+      "name": "Maintain & prevent recurrence",
+      "description": "Maintain 2–3 sessions/week + walking habit; watch load spikes."
+    }
+  ],
+  "walking_weekly_targets": [
+    {
+      "week": 1,
+      "sessions_per_week": 3,
+      "minutes_per_session": 10
+    },
+    {
+      "week": 2,
+      "sessions_per_week": 3,
+      "minutes_per_session": 12
+    },
+    {
+      "week": 3,
+      "sessions_per_week": 3,
+      "minutes_per_session": 15
+    },
+    {
+      "week": 4,
+      "sessions_per_week": 4,
+      "minutes_per_session": 15
+    },
+    {
+      "week": 5,
+      "sessions_per_week": 4,
+      "minutes_per_session": 18
+    },
+    {
+      "week": 6,
+      "sessions_per_week": 4,
+      "minutes_per_session": 20
+    },
+    {
+      "week": 7,
+      "sessions_per_week": 4,
+      "minutes_per_session": 22
+    },
+    {
+      "week": 8,
+      "sessions_per_week": 4,
+      "minutes_per_session": 25
+    },
+    {
+      "week": 9,
+      "sessions_per_week": 5,
+      "minutes_per_session": 25
+    },
+    {
+      "week": 10,
+      "sessions_per_week": 5,
+      "minutes_per_session": 30
+    }
+  ],
+  "pain_monitor_default_threshold": 3,
+  "pain_monitor_notes": "Default threshold uses a conservative symptom-limited approach (≤3/10 and no next-day flare). Users can personalize (Premium) with safety warnings.",
+  "evidence_refs": [
+    "who2023_cplbp_guideline",
+    "jospt2021_lbp_cpg",
+    "lancet2024_walkback_trial"
+  ]
+}
