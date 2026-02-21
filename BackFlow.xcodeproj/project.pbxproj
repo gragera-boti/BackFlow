@@ -90,7 +90,17 @@
 		F9E6B743777A10C8721074F8 /* ProgramPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B9FCCDA6A011713B36F705 /* ProgramPlan.swift */; };
 		FDA3110DFBFFC40C80DC48E7 /* EducationBiteCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E864370165110BC46D7CB63F /* EducationBiteCard.swift */; };
 		FDF8D868BC6FABEF3EAFB3F5 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68D7D8008D835746E38C409 /* ProgressViewModel.swift */; };
-/* End PBXBuildFile section */
+		75AEB88AC879453187103B6D /* GoalAndScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397F31E6B5A45DE83CCC8B3 /* GoalAndScheduleViewModel.swift */; };
+		FF31A284BF454C9FB577599D /* BaselineAssessmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0168AAD67F44B5971CBCA3 /* BaselineAssessmentViewModel.swift */; };
+		17577511976F41FDA6AAA85A /* GoalToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABAD44B9911416C8CD5F680 /* GoalToggle.swift */; };
+		4C1994498FEA4341885AF56A /* EquipmentToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB0C210F42424AAA8130AB1A /* EquipmentToggle.swift */; };
+		BB16B5B943B04B9C94426A4B /* RedFlagQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B04D8300B8421BB94BD325 /* RedFlagQuestion.swift */; };
+		23CB03C5FD934F67907B629E /* ReminderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6B75A45DC413FB6E56608 /* ReminderSettings.swift */; };
+		F8E8D5E564044947931C74ED /* SessionsPerWeekPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA71F7C419E4041942B289F /* SessionsPerWeekPicker.swift */; };
+		7A55989C723D40D6AEF76035 /* PainSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39751F613974A79960EE10D /* PainSlider.swift */; };
+		5EBE6856877446678E34FA97 /* FunctionTaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 858F935A6DB543C387EE45C8 /* FunctionTaskRow.swift */; };
+		7D1272B2B5A2445F9D5EABC2 /* WalkingBaselinePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A6B4874E2B48D09B8C10D4 /* WalkingBaselinePicker.swift */; };
+		/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF2AB8A02D17B94F00FDB3DB /* WalkingLogSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingLogSheet.swift; sourceTree = "<group>"; };
@@ -176,7 +186,17 @@
 		F9C029AFEB5AF7F5AEC6BABD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F9F5BF0043A62767C28893AC /* FunctionLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionLog.swift; sourceTree = "<group>"; };
 		FC2A3DD36371DC861400E7ED /* ExerciseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseServiceProtocol.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
+		2397F31E6B5A45DE83CCC8B3 /* GoalAndScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalAndScheduleViewModel.swift; sourceTree = "<group>"; };
+		AA0168AAD67F44B5971CBCA3 /* BaselineAssessmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaselineAssessmentViewModel.swift; sourceTree = "<group>"; };
+		EABAD44B9911416C8CD5F680 /* GoalToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalToggle.swift; sourceTree = "<group>"; };
+		DB0C210F42424AAA8130AB1A /* EquipmentToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentToggle.swift; sourceTree = "<group>"; };
+		49B04D8300B8421BB94BD325 /* RedFlagQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedFlagQuestion.swift; sourceTree = "<group>"; };
+		D6C6B75A45DC413FB6E56608 /* ReminderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderSettings.swift; sourceTree = "<group>"; };
+		5FA71F7C419E4041942B289F /* SessionsPerWeekPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsPerWeekPicker.swift; sourceTree = "<group>"; };
+		E39751F613974A79960EE10D /* PainSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PainSlider.swift; sourceTree = "<group>"; };
+		858F935A6DB543C387EE45C8 /* FunctionTaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionTaskRow.swift; sourceTree = "<group>"; };
+		A3A6B4874E2B48D09B8C10D4 /* WalkingBaselinePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkingBaselinePicker.swift; sourceTree = "<group>"; };
+		/* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B26B1DB428FEB551433A23BE /* Frameworks */ = {
@@ -244,8 +264,28 @@
 				C89CA06FE2483B749F88F6A6 /* OnboardingFlow.swift */,
 				A2BFDE52C9293E5765296E99 /* RedFlagsView.swift */,
 				F1EAFBECA2DDDBDF7627EE6F /* StopAndSeekCareView.swift */,
+			
+				2397F31E6B5A45DE83CCC8B3 /* GoalAndScheduleViewModel.swift */,
+				AA0168AAD67F44B5971CBCA3 /* BaselineAssessmentViewModel.swift */,
+				C0MP00000000000000000001 /* Components */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+
+		C0MP00000000000000000001 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EABAD44B9911416C8CD5F680 /* GoalToggle.swift */,
+				DB0C210F42424AAA8130AB1A /* EquipmentToggle.swift */,
+				49B04D8300B8421BB94BD325 /* RedFlagQuestion.swift */,
+				D6C6B75A45DC413FB6E56608 /* ReminderSettings.swift */,
+				5FA71F7C419E4041942B289F /* SessionsPerWeekPicker.swift */,
+				E39751F613974A79960EE10D /* PainSlider.swift */,
+				858F935A6DB543C387EE45C8 /* FunctionTaskRow.swift */,
+				A3A6B4874E2B48D09B8C10D4 /* WalkingBaselinePicker.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		19C0B1DA3CC26A79F6D4E5FD /* Enums */ = {
@@ -652,6 +692,17 @@
 				CA6F90DA6280F06FA2CE623C /* WalkingService.swift in Sources */,
 				197B3B48ADD9ADE78A92FB86 /* WalkingServiceProtocol.swift in Sources */,
 				4D0415BBD3FD117454ECFA1F /* WalkingTargetCard.swift in Sources */,
+			
+				75AEB88AC879453187103B6D /* GoalAndScheduleViewModel.swift in Sources */,
+				FF31A284BF454C9FB577599D /* BaselineAssessmentViewModel.swift in Sources */,
+				17577511976F41FDA6AAA85A /* GoalToggle.swift in Sources */,
+				4C1994498FEA4341885AF56A /* EquipmentToggle.swift in Sources */,
+				BB16B5B943B04B9C94426A4B /* RedFlagQuestion.swift in Sources */,
+				23CB03C5FD934F67907B629E /* ReminderSettings.swift in Sources */,
+				F8E8D5E564044947931C74ED /* SessionsPerWeekPicker.swift in Sources */,
+				7A55989C723D40D6AEF76035 /* PainSlider.swift in Sources */,
+				5EBE6856877446678E34FA97 /* FunctionTaskRow.swift in Sources */,
+				7D1272B2B5A2445F9D5EABC2 /* WalkingBaselinePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
