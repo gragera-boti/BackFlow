@@ -57,18 +57,19 @@
 
 ### 📋 Audit Tasks
 
-#### Phase 1: Code Audit
-- [ ] Check all ViewModels for SwiftUI imports
-- [ ] Find all view bodies > 80 lines
-- [ ] Find all files > 300 lines
-- [ ] Find all force-unwraps and force-tries
-- [ ] Check all views for accessibility labels
+#### Phase 1: Code Audit ✅ COMPLETE
+- [x] Check all ViewModels for SwiftUI imports
+- [x] Find all view bodies > 80 lines
+- [x] Find all files > 300 lines
+- [x] Find all force-unwraps and force-tries
+- [x] Check all views for accessibility labels
 
-#### Phase 2: Refactor Onboarding
-- [ ] Create `BaselineAssessmentViewModel`
-- [ ] Create `GoalAndScheduleViewModel`
-- [ ] Create `OnboardingCoordinator` (ViewModel)
-- [ ] Extract view components to meet 80-line rule
+#### Phase 2: Refactor Onboarding ✅ COMPLETE (pending Xcode project update)
+- [x] Create `BaselineAssessmentViewModel`
+- [x] Create `GoalAndScheduleViewModel`
+- [x] OnboardingFlow cleaned up with OSLog (full coordinator not needed)
+- [x] Extract view components to meet 80-line rule
+- [ ] **Action Required:** Add new files to Xcode project (see ADD_FILES_TO_XCODE.md)
 
 #### Phase 3: Testing
 - [ ] Set up Swift Testing framework

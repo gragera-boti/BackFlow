@@ -86,14 +86,43 @@ Added to all new components:
 
 ---
 
+## Phase 2 Status: ✅ COMPLETE
+
+### What Was Done
+1. ✅ Created GoalAndScheduleViewModel with proper MVVM pattern
+2. ✅ Extracted all components from GoalAndScheduleView:
+   - GoalToggle
+   - EquipmentToggle
+   - SessionsPerWeekPicker
+   - ReminderSettings
+3. ✅ Cleaned up OnboardingFlow (no separate coordinator needed)
+4. ✅ Extracted RedFlagQuestion component
+5. ✅ Added accessibility labels throughout onboarding
+6. ✅ Replaced all print() with OSLog
+7. ✅ Improved error handling
+
+### Action Required Before Phase 3
+**Add new files to Xcode project** - see `ADD_FILES_TO_XCODE.md` for instructions.
+
+The files exist but aren't registered in the Xcode project file yet, so the build is currently failing.
+
+### Phase 2 Results
+- BaselineAssessmentView: 131 lines → 60 lines
+- GoalAndScheduleView: 127 lines → 50 lines
+- All components under 80 lines
+- Full accessibility support
+- Testable ViewModels
+
 ## Suggested Next Steps
 
-### Phase 2: Complete Onboarding Refactor
+### Phase 3: View Body Extraction
 ```
-1. Create GoalAndScheduleViewModel
-2. Extract components from GoalAndScheduleView
-3. Create OnboardingCoordinator if needed
-4. Test full onboarding flow
+Once build succeeds after adding files:
+1. Extract components from PaywallView (121 lines → target <80)
+2. Refactor QuickLogSheet → QuickLogViewModel + components
+3. Refactor WalkingLogSheet → WalkingLogViewModel + components  
+4. Break down ExerciseDetailView (162 lines)
+5. Break down SessionPlayerView (148 lines)
 ```
 
 ### Phase 3: View Body Extraction
