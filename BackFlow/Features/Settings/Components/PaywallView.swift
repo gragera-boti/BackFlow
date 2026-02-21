@@ -146,9 +146,13 @@ struct PaywallView: View {
                 .foregroundStyle(Theme.Colors.textSecondary)
             
             HStack(spacing: Theme.Spacing.medium) {
-                Link("Privacy Policy", destination: URL(string: "https://backflow.app/privacy")!)
+                if let privacyURL = URL(string: "https://backflow.app/privacy") {
+                    Link("Privacy Policy", destination: privacyURL)
+                }
                 Text("•")
-                Link("Terms of Service", destination: URL(string: "https://backflow.app/terms")!)
+                if let termsURL = URL(string: "https://backflow.app/terms") {
+                    Link("Terms of Service", destination: termsURL)
+                }
             }
             .font(Theme.Typography.caption)
             .foregroundStyle(Theme.Colors.primary)

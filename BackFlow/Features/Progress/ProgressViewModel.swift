@@ -34,8 +34,10 @@ final class ProgressViewModel {
     // MARK: - Computed Properties - Pain Data
     var painChartData: [(Date, Int)] {
         symptomLogs
-            .filter { $0.painNow != nil }
-            .map { ($0.timestamp, $0.painNow!) }
+            .compactMap { log in
+                guard let pain = log.painNow else { return nil }
+                return (log.timestamp, pain)
+            }
             .sorted { $0.0 < $1.0 }
     }
     
@@ -101,7 +103,10 @@ final class ProgressViewModel {
     
     var sessionsThisWeek: Int {
         let calendar = Calendar.current
-        let weekStart = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
+        guard let weekStart = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date())) else {
+            logger.warning("Failed to calculate week start date")
+            return 0
+        }
         return sessions.filter { $0.completed && $0.date >= weekStart }.count
     }
     
