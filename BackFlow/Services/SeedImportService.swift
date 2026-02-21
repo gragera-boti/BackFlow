@@ -34,7 +34,7 @@ class SeedImportService {
     }
     
     private func importReferences(modelContext: ModelContext) async {
-        guard let url = Bundle.main.url(forResource: "references", withExtension: "json", subdirectory: "SeedData"),
+        guard let url = Bundle.main.url(forResource: "references", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONDecoder().decode([ReferenceJSON].self, from: data) else {
             print("Failed to load references.json")
@@ -58,7 +58,7 @@ class SeedImportService {
     }
     
     private func importExercises(modelContext: ModelContext) async {
-        guard let url = Bundle.main.url(forResource: "exercises", withExtension: "json", subdirectory: "SeedData"),
+        guard let url = Bundle.main.url(forResource: "exercises", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONDecoder().decode([ExerciseJSON].self, from: data) else {
             print("Failed to load exercises.json")
@@ -92,7 +92,7 @@ class SeedImportService {
     }
     
     private func importEducationCards(modelContext: ModelContext) async {
-        guard let url = Bundle.main.url(forResource: "education_cards", withExtension: "json", subdirectory: "SeedData"),
+        guard let url = Bundle.main.url(forResource: "education_cards", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let json = try? JSONDecoder().decode([EducationCardJSON].self, from: data) else {
             print("Failed to load education_cards.json")
@@ -112,7 +112,7 @@ class SeedImportService {
     }
     
     private func importProgramTemplates(modelContext: ModelContext) async {
-        guard let url = Bundle.main.url(forResource: "program_templates", withExtension: "json", subdirectory: "SeedData"),
+        guard let url = Bundle.main.url(forResource: "program_templates", withExtension: "json"),
               let data = try? Data(contentsOf: url),
               let template = try? JSONDecoder().decode(ProgramTemplateJSON.self, from: data) else {
             print("Failed to load program_templates.json")
