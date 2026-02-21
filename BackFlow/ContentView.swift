@@ -4,7 +4,8 @@ struct ContentView: View {
     @Environment(\.router) private var router
     
     var body: some View {
-        NavigationStack(path: $router.path) {
+        @Bindable var bindableRouter = router
+        NavigationStack(path: $bindableRouter.path) {
             TabView {
                 TodayView()
                     .tabItem {

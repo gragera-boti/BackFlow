@@ -80,7 +80,7 @@ struct TodayView: View {
             await viewModel.refreshData()
         }
         .alert("Error", isPresented: errorBinding(viewModel: viewModel)) {
-            Button("OK") { viewModel.errorMessage = nil }
+            Button("OK") { viewModel.clearError() }
         } message: {
             Text(viewModel.errorMessage ?? "")
         }
@@ -89,7 +89,7 @@ struct TodayView: View {
     private func errorBinding(viewModel: TodayViewModel) -> Binding<Bool> {
         Binding(
             get: { viewModel.errorMessage != nil },
-            set: { if !$0 { viewModel.errorMessage = nil } }
+            set: { if !$0 { viewModel.clearError() } }
         )
     }
 }

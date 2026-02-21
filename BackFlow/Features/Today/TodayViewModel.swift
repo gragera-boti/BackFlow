@@ -103,4 +103,8 @@ final class TodayViewModel {
     func refreshData() async {
         await loadData()
     }
+    
+    func clearError() {
+        errorMessage = nil
+    }
 }

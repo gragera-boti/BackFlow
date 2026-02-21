@@ -2,7 +2,7 @@ import SwiftUI
 
 // MARK: - AppRouter
 
-@MainActor @Observable
+@Observable
 final class AppRouter {
     var path = NavigationPath()
     
@@ -38,13 +38,6 @@ enum AppDestination: Hashable {
 
 // MARK: - Environment Key
 
-private struct AppRouterKey: EnvironmentKey {
-    static let defaultValue = AppRouter()
-}
-
 extension EnvironmentValues {
-    var router: AppRouter {
-        get { self[AppRouterKey.self] }
-        set { self[AppRouterKey.self] = newValue }
-    }
+    @Entry var router: AppRouter = AppRouter()
 }

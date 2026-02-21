@@ -47,7 +47,7 @@ final class EducationService: EducationServiceProtocol {
     
     func fetchRandomCard() async throws(EducationServiceError) -> EducationCard? {
         do {
-            let cards = try fetchAllCards()
+            let cards = try await fetchAllCards()
             return cards.randomElement()
         } catch {
             throw error
