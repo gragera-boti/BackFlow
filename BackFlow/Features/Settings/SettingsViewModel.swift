@@ -17,7 +17,14 @@ final class SettingsViewModel {
     private let subscriptionService: SubscriptionServiceProtocol
     
     // MARK: - Constants
-    let appVersion: String = "1.0.0"
+    let appVersion: String = {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
+    }()
+    
+    let buildNumber: String = {
+        Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+    }()
+    
     let supportEmail: String = "support@backflow.app"
     
     // MARK: - Initialization
@@ -92,6 +99,20 @@ final class SettingsViewModel {
     func resetAllData() async {
         // TODO: Implement data reset
         logger.warning("Reset all data requested")
+    }
+    
+    func resetOnboarding() {
+        logger.info("Resetting onboarding state")
+        
+        // Clear @AppStorage flag
+        UserDefaults.standard.removeObject(forKey: "onboardingCompleted")
+        
+        // Force app restart to show onboarding
+        // This will trigger ContentView to re-check onboarding status
+        logger.info("✅ Onboarding reset - app will restart on next launch")
+        
+        // Exit the app (on iOS, this is discouraged but acceptable for developer tools)
+        exit(0)
     }
     
     func clearError() {

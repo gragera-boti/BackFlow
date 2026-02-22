@@ -27,40 +27,39 @@ struct LibraryView: View {
     @ViewBuilder
     private func contentView(viewModel: LibraryViewModel) -> some View {
         @Bindable var bindableViewModel = viewModel
-        NavigationStack {
-            VStack(spacing: 0) {
-                Picker("Library", selection: $bindableViewModel.selectedTab) {
-                    ForEach(LibraryTab.allCases) { tab in
-                        Text(tab.rawValue).tag(tab)
+        
+        VStack(spacing: 0) {
+            Picker("Library", selection: $bindableViewModel.selectedTab) {
+                ForEach(LibraryTab.allCases) { tab in
+                    Text(tab.rawValue).tag(tab)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding()
+            
+            switch viewModel.selectedTab {
+            case .exercises:
+                ExerciseLibraryList(
+                    groupedExercises: viewModel.groupedExercises,
+                    onExerciseSelected: { exercise in
+                        router.navigate(to: .exerciseDetail(exerciseSlug: exercise.slug))
                     }
-                }
-                .pickerStyle(.segmented)
-                .padding()
-                
-                switch viewModel.selectedTab {
-                case .exercises:
-                    ExerciseLibraryList(
-                        groupedExercises: viewModel.groupedExercises,
-                        onExerciseSelected: { exercise in
-                            router.navigate(to: .exerciseDetail(exerciseSlug: exercise.slug))
-                        }
-                    )
-                case .education:
-                    EducationLibraryList(
-                        cards: viewModel.filteredEducationCards,
-                        onCardSelected: { card in
-                            router.navigate(to: .educationDetail(cardId: card.cardId))
-                        }
-                    )
-                }
+                )
+            case .education:
+                EducationLibraryList(
+                    cards: viewModel.filteredEducationCards,
+                    onCardSelected: { card in
+                        router.navigate(to: .educationDetail(cardId: card.cardId))
+                    }
+                )
             }
-            .navigationTitle("Library")
-            .searchable(text: $bindableViewModel.searchText, prompt: "Search...")
-            .alert("Error", isPresented: errorBinding(viewModel: viewModel)) {
-                Button("OK") { viewModel.clearError() }
-            } message: {
-                Text(viewModel.errorMessage ?? "")
-            }
+        }
+        .navigationTitle("Library")
+        .searchable(text: $bindableViewModel.searchText, prompt: "Search...")
+        .alert("Error", isPresented: errorBinding(viewModel: viewModel)) {
+            Button("OK") { viewModel.clearError() }
+        } message: {
+            Text(viewModel.errorMessage ?? "")
         }
     }
     

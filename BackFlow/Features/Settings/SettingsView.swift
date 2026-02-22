@@ -8,6 +8,7 @@ struct SettingsView: View {
     @State private var viewModel: SettingsViewModel?
     @State private var showPaywall = false
     @State private var showResetConfirmation = false
+    @State private var showResetOnboardingConfirmation = false
     
     var body: some View {
         Group {
@@ -48,6 +49,9 @@ struct SettingsView: View {
                 // About
                 aboutSection(viewModel: viewModel)
                 
+                // Developer
+                developerSection(viewModel: viewModel)
+                
                 // Danger Zone
                 dangerSection(viewModel: viewModel)
             }
@@ -67,6 +71,14 @@ struct SettingsView: View {
                 }
             } message: {
                 Text("This will permanently delete all your data. This action cannot be undone.")
+            }
+            .alert("Reset Onboarding", isPresented: $showResetOnboardingConfirmation) {
+                Button("Cancel", role: .cancel) {}
+                Button("Reset", role: .destructive) {
+                    viewModel.resetOnboarding()
+                }
+            } message: {
+                Text("This will reset onboarding and restart the app. Your data will be preserved.")
             }
             .alert("Error", isPresented: errorBinding(viewModel: viewModel)) {
                 Button("OK") { viewModel.clearError() }
@@ -158,6 +170,18 @@ struct SettingsView: View {
             }
             
             Link("Support & Feedback", destination: URL(string: "mailto:\(viewModel.supportEmail)")!)
+        }
+    }
+    
+    @ViewBuilder
+    private func developerSection(viewModel: SettingsViewModel) -> some View {
+        Section("Developer") {
+            Button("Reset Onboarding") {
+                showResetOnboardingConfirmation = true
+            }
+            
+            LabeledContent("App Version", value: viewModel.appVersion)
+            LabeledContent("Build", value: viewModel.buildNumber)
         }
     }
     
